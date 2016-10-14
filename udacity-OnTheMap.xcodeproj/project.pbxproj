@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		653B38AB1DB0C6CF000D0E11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653B38AA1DB0C6CF000D0E11 /* AppDelegate.swift */; };
+		653B38AD1DB0C6CF000D0E11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653B38AC1DB0C6CF000D0E11 /* ViewController.swift */; };
+		653B38B01DB0C6CF000D0E11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653B38AE1DB0C6CF000D0E11 /* Main.storyboard */; };
+		653B38B21DB0C6D0000D0E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B11DB0C6D0000D0E11 /* Assets.xcassets */; };
+		653B38B51DB0C6D0000D0E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B31DB0C6D0000D0E11 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		653B38A71DB0C6CF000D0E11 /* udacity-OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "udacity-OnTheMap.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		653B38AA1DB0C6CF000D0E11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		653B38AC1DB0C6CF000D0E11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		653B38AF1DB0C6CF000D0E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		653B38B11DB0C6D0000D0E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		653B38B41DB0C6D0000D0E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		653B38B61DB0C6D0000D0E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		653B38A41DB0C6CF000D0E11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		653B389E1DB0C6CF000D0E11 = {
+			isa = PBXGroup;
+			children = (
+				653B38A91DB0C6CF000D0E11 /* udacity-OnTheMap */,
+				653B38A81DB0C6CF000D0E11 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		653B38A81DB0C6CF000D0E11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				653B38A71DB0C6CF000D0E11 /* udacity-OnTheMap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		653B38A91DB0C6CF000D0E11 /* udacity-OnTheMap */ = {
+			isa = PBXGroup;
+			children = (
+				653B38AA1DB0C6CF000D0E11 /* AppDelegate.swift */,
+				653B38AC1DB0C6CF000D0E11 /* ViewController.swift */,
+				653B38AE1DB0C6CF000D0E11 /* Main.storyboard */,
+				653B38B11DB0C6D0000D0E11 /* Assets.xcassets */,
+				653B38B31DB0C6D0000D0E11 /* LaunchScreen.storyboard */,
+				653B38B61DB0C6D0000D0E11 /* Info.plist */,
+			);
+			path = "udacity-OnTheMap";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		653B38A61DB0C6CF000D0E11 /* udacity-OnTheMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 653B38B91DB0C6D0000D0E11 /* Build configuration list for PBXNativeTarget "udacity-OnTheMap" */;
+			buildPhases = (
+				653B38A31DB0C6CF000D0E11 /* Sources */,
+				653B38A41DB0C6CF000D0E11 /* Frameworks */,
+				653B38A51DB0C6CF000D0E11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "udacity-OnTheMap";
+			productName = "udacity-OnTheMap";
+			productReference = 653B38A71DB0C6CF000D0E11 /* udacity-OnTheMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		653B389F1DB0C6CF000D0E11 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Ekantik Tech Studio";
+				TargetAttributes = {
+					653B38A61DB0C6CF000D0E11 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 653B38A21DB0C6CF000D0E11 /* Build configuration list for PBXProject "udacity-OnTheMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 653B389E1DB0C6CF000D0E11;
+			productRefGroup = 653B38A81DB0C6CF000D0E11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				653B38A61DB0C6CF000D0E11 /* udacity-OnTheMap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		653B38A51DB0C6CF000D0E11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653B38B51DB0C6D0000D0E11 /* LaunchScreen.storyboard in Resources */,
+				653B38B21DB0C6D0000D0E11 /* Assets.xcassets in Resources */,
+				653B38B01DB0C6CF000D0E11 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		653B38A31DB0C6CF000D0E11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653B38AD1DB0C6CF000D0E11 /* ViewController.swift in Sources */,
+				653B38AB1DB0C6CF000D0E11 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		653B38AE1DB0C6CF000D0E11 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				653B38AF1DB0C6CF000D0E11 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		653B38B31DB0C6D0000D0E11 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				653B38B41DB0C6D0000D0E11 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		653B38B71DB0C6D0000D0E11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		653B38B81DB0C6D0000D0E11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		653B38BA1DB0C6D0000D0E11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "udacity-OnTheMap/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.ekantik.udacity-OnTheMap";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		653B38BB1DB0C6D0000D0E11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "udacity-OnTheMap/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.ekantik.udacity-OnTheMap";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		653B38A21DB0C6CF000D0E11 /* Build configuration list for PBXProject "udacity-OnTheMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				653B38B71DB0C6D0000D0E11 /* Debug */,
+				653B38B81DB0C6D0000D0E11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		653B38B91DB0C6D0000D0E11 /* Build configuration list for PBXNativeTarget "udacity-OnTheMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				653B38BA1DB0C6D0000D0E11 /* Debug */,
+				653B38BB1DB0C6D0000D0E11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 653B389F1DB0C6CF000D0E11 /* Project object */;
+}
