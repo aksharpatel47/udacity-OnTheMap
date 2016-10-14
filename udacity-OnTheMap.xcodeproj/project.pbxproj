@@ -12,6 +12,7 @@
 		653B38B01DB0C6CF000D0E11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653B38AE1DB0C6CF000D0E11 /* Main.storyboard */; };
 		653B38B21DB0C6D0000D0E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B11DB0C6D0000D0E11 /* Assets.xcassets */; };
 		653B38B51DB0C6D0000D0E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B31DB0C6D0000D0E11 /* LaunchScreen.storyboard */; };
+		653B38BD1DB0C809000D0E11 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 653B38BC1DB0C809000D0E11 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		653B38B11DB0C6D0000D0E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		653B38B41DB0C6D0000D0E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		653B38B61DB0C6D0000D0E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653B38BC1DB0C809000D0E11 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 		653B389E1DB0C6CF000D0E11 = {
 			isa = PBXGroup;
 			children = (
+				653B38BC1DB0C809000D0E11 /* .gitignore */,
 				653B38A91DB0C6CF000D0E11 /* udacity-OnTheMap */,
 				653B38A81DB0C6CF000D0E11 /* Products */,
 			);
@@ -96,6 +99,7 @@
 				TargetAttributes = {
 					653B38A61DB0C6CF000D0E11 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = GAR9GU6C4G;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -123,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653B38BD1DB0C809000D0E11 /* .gitignore in Resources */,
 				653B38B51DB0C6D0000D0E11 /* LaunchScreen.storyboard in Resources */,
 				653B38B21DB0C6D0000D0E11 /* Assets.xcassets in Resources */,
 				653B38B01DB0C6CF000D0E11 /* Main.storyboard in Resources */,
@@ -260,6 +265,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GAR9GU6C4G;
 				INFOPLIST_FILE = "udacity-OnTheMap/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.ekantik.udacity-OnTheMap";
@@ -272,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GAR9GU6C4G;
 				INFOPLIST_FILE = "udacity-OnTheMap/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.ekantik.udacity-OnTheMap";
@@ -299,6 +306,7 @@
 				653B38BB1DB0C6D0000D0E11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
