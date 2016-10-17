@@ -7,19 +7,32 @@
 //
 
 import UIKit
+import FacebookLogin
 
 class ViewController: UIViewController {
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    let button = LoginButton(readPermissions: [.publicProfile, .email])
+    button.delegate = self
+    button.center = view.center
+    view.addSubview(button)
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-
 }
 
+extension ViewController : LoginButtonDelegate {
+  func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+    switch result {
+    case .success(let grantedPermissions, let declinedPermissions, let token):
+      print(grantedPermissions, declinedPermissions, token)
+    case .failed(let error):
+      print(error)
+    case .cancelled:
+      print("Login Cancelled")
+    }
+  }
+  
+  func loginButtonDidLogOut(_ loginButton: LoginButton) {
+    
+  }
+}

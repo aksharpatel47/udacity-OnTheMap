@@ -14,6 +14,7 @@
 		653B38B21DB0C6D0000D0E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B11DB0C6D0000D0E11 /* Assets.xcassets */; };
 		653B38B51DB0C6D0000D0E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B31DB0C6D0000D0E11 /* LaunchScreen.storyboard */; };
 		653B38BD1DB0C809000D0E11 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 653B38BC1DB0C809000D0E11 /* .gitignore */; };
+		80E316818B5745374632CE26 /* Pods_udacity_OnTheMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A1564ABDD5CD69B7370D73 /* Pods_udacity_OnTheMap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,10 @@
 		653B38B41DB0C6D0000D0E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		653B38B61DB0C6D0000D0E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653B38BC1DB0C809000D0E11 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		65FF91C61DB4C169000C2C73 /* udacity-OnTheMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "udacity-OnTheMap.entitlements"; sourceTree = "<group>"; };
+		978A0AEFD6BB445BD8D757A7 /* Pods-udacity-OnTheMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-udacity-OnTheMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-udacity-OnTheMap/Pods-udacity-OnTheMap.release.xcconfig"; sourceTree = "<group>"; };
+		C9F84DAB82D3BCB97BD2B668 /* Pods-udacity-OnTheMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-udacity-OnTheMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-udacity-OnTheMap/Pods-udacity-OnTheMap.debug.xcconfig"; sourceTree = "<group>"; };
+		D3A1564ABDD5CD69B7370D73 /* Pods_udacity_OnTheMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_udacity_OnTheMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,12 +38,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E316818B5745374632CE26 /* Pods_udacity_OnTheMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F95B662456EB71EA9103635 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3A1564ABDD5CD69B7370D73 /* Pods_udacity_OnTheMap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		653B389E1DB0C6CF000D0E11 = {
 			isa = PBXGroup;
 			children = (
@@ -46,6 +60,8 @@
 				653B38BC1DB0C809000D0E11 /* .gitignore */,
 				653B38A91DB0C6CF000D0E11 /* udacity-OnTheMap */,
 				653B38A81DB0C6CF000D0E11 /* Products */,
+				72690A382965B7E53F2A0A97 /* Pods */,
+				3F95B662456EB71EA9103635 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +76,7 @@
 		653B38A91DB0C6CF000D0E11 /* udacity-OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				65FF91C61DB4C169000C2C73 /* udacity-OnTheMap.entitlements */,
 				653B38AA1DB0C6CF000D0E11 /* AppDelegate.swift */,
 				653B38AC1DB0C6CF000D0E11 /* ViewController.swift */,
 				653B38AE1DB0C6CF000D0E11 /* Main.storyboard */,
@@ -70,6 +87,15 @@
 			path = "udacity-OnTheMap";
 			sourceTree = "<group>";
 		};
+		72690A382965B7E53F2A0A97 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9F84DAB82D3BCB97BD2B668 /* Pods-udacity-OnTheMap.debug.xcconfig */,
+				978A0AEFD6BB445BD8D757A7 /* Pods-udacity-OnTheMap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 653B38B91DB0C6D0000D0E11 /* Build configuration list for PBXNativeTarget "udacity-OnTheMap" */;
 			buildPhases = (
+				2DB3F850758433A42901CC9B /* [CP] Check Pods Manifest.lock */,
 				653B38A31DB0C6CF000D0E11 /* Sources */,
 				653B38A41DB0C6CF000D0E11 /* Frameworks */,
 				653B38A51DB0C6CF000D0E11 /* Resources */,
+				29923E3DDFFAE6F6752E0168 /* [CP] Embed Pods Frameworks */,
+				64A0C0CE172B45DA3026242C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -104,6 +133,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = GAR9GU6C4G;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -138,6 +172,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29923E3DDFFAE6F6752E0168 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-udacity-OnTheMap/Pods-udacity-OnTheMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DB3F850758433A42901CC9B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		64A0C0CE172B45DA3026242C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-udacity-OnTheMap/Pods-udacity-OnTheMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		653B38A31DB0C6CF000D0E11 /* Sources */ = {
@@ -267,9 +349,15 @@
 		};
 		653B38BA1DB0C6D0000D0E11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9F84DAB82D3BCB97BD2B668 /* Pods-udacity-OnTheMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "udacity-OnTheMap/udacity-OnTheMap.entitlements";
 				DEVELOPMENT_TEAM = GAR9GU6C4G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "udacity-OnTheMap/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.ekantik.udacity-OnTheMap";
@@ -280,9 +368,15 @@
 		};
 		653B38BB1DB0C6D0000D0E11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 978A0AEFD6BB445BD8D757A7 /* Pods-udacity-OnTheMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "udacity-OnTheMap/udacity-OnTheMap.entitlements";
 				DEVELOPMENT_TEAM = GAR9GU6C4G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "udacity-OnTheMap/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tech.ekantik.udacity-OnTheMap";
