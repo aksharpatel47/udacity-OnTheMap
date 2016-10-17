@@ -14,7 +14,7 @@
 		653B38B21DB0C6D0000D0E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B11DB0C6D0000D0E11 /* Assets.xcassets */; };
 		653B38B51DB0C6D0000D0E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B31DB0C6D0000D0E11 /* LaunchScreen.storyboard */; };
 		653B38BD1DB0C809000D0E11 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 653B38BC1DB0C809000D0E11 /* .gitignore */; };
-		80E316818B5745374632CE26 /* Pods_udacity_OnTheMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A1564ABDD5CD69B7370D73 /* Pods_udacity_OnTheMap.framework */; };
+		80E316818B5745374632CE26 /* Pods_udacity_OnTheMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A1564ABDD5CD69B7370D73 /* Pods_udacity_OnTheMap.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
