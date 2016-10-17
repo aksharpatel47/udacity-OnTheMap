@@ -14,6 +14,8 @@
 		653B38B21DB0C6D0000D0E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B11DB0C6D0000D0E11 /* Assets.xcassets */; };
 		653B38B51DB0C6D0000D0E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B31DB0C6D0000D0E11 /* LaunchScreen.storyboard */; };
 		653B38BD1DB0C809000D0E11 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 653B38BC1DB0C809000D0E11 /* .gitignore */; };
+		65FF91CA1DB4CC60000C2C73 /* UOTMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF91C91DB4CC60000C2C73 /* UOTMClient.swift */; };
+		65FF91CC1DB4CC77000C2C73 /* UOTMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF91CB1DB4CC77000C2C73 /* UOTMConstants.swift */; };
 		80E316818B5745374632CE26 /* Pods_udacity_OnTheMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A1564ABDD5CD69B7370D73 /* Pods_udacity_OnTheMap.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		653B38B61DB0C6D0000D0E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653B38BC1DB0C809000D0E11 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		65FF91C61DB4C169000C2C73 /* udacity-OnTheMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "udacity-OnTheMap.entitlements"; sourceTree = "<group>"; };
+		65FF91C91DB4CC60000C2C73 /* UOTMClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UOTMClient.swift; sourceTree = "<group>"; };
+		65FF91CB1DB4CC77000C2C73 /* UOTMConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UOTMConstants.swift; sourceTree = "<group>"; };
 		978A0AEFD6BB445BD8D757A7 /* Pods-udacity-OnTheMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-udacity-OnTheMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-udacity-OnTheMap/Pods-udacity-OnTheMap.release.xcconfig"; sourceTree = "<group>"; };
 		C9F84DAB82D3BCB97BD2B668 /* Pods-udacity-OnTheMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-udacity-OnTheMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-udacity-OnTheMap/Pods-udacity-OnTheMap.debug.xcconfig"; sourceTree = "<group>"; };
 		D3A1564ABDD5CD69B7370D73 /* Pods_udacity_OnTheMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_udacity_OnTheMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +80,7 @@
 		653B38A91DB0C6CF000D0E11 /* udacity-OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				65FF91C71DB4CC3B000C2C73 /* Model */,
 				65FF91C61DB4C169000C2C73 /* udacity-OnTheMap.entitlements */,
 				653B38AA1DB0C6CF000D0E11 /* AppDelegate.swift */,
 				653B38AC1DB0C6CF000D0E11 /* ViewController.swift */,
@@ -85,6 +90,23 @@
 				653B38B61DB0C6D0000D0E11 /* Info.plist */,
 			);
 			path = "udacity-OnTheMap";
+			sourceTree = "<group>";
+		};
+		65FF91C71DB4CC3B000C2C73 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				65FF91C81DB4CC43000C2C73 /* UOTM */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		65FF91C81DB4CC43000C2C73 /* UOTM */ = {
+			isa = PBXGroup;
+			children = (
+				65FF91C91DB4CC60000C2C73 /* UOTMClient.swift */,
+				65FF91CB1DB4CC77000C2C73 /* UOTMConstants.swift */,
+			);
+			name = UOTM;
 			sourceTree = "<group>";
 		};
 		72690A382965B7E53F2A0A97 /* Pods */ = {
@@ -229,6 +251,8 @@
 				65055D841DB0D19800E858C8 /* README.md in Sources */,
 				653B38AD1DB0C6CF000D0E11 /* ViewController.swift in Sources */,
 				653B38AB1DB0C6CF000D0E11 /* AppDelegate.swift in Sources */,
+				65FF91CC1DB4CC77000C2C73 /* UOTMConstants.swift in Sources */,
+				65FF91CA1DB4CC60000C2C73 /* UOTMClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
