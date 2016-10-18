@@ -183,6 +183,9 @@
                             <barButtonItem image="pin" id="lyj-XA-O91"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <segue destination="y0G-KL-Xrd" kind="presentation" identifier="pinToMapFromTableView" id="xU9-7N-umn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbH-2S-VhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -289,6 +292,9 @@ today?</string>
                     <navigationItem key="navigationItem" id="8lg-NT-iaq">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="QrE-54-ebN"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="The-lz-gQv" kind="show" identifier="AddLink" id="5ud-KZ-hvO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ljv-2Y-owy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -398,6 +404,9 @@ today?</string>
                             <barButtonItem image="pin" id="nAu-yd-jww"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <segue destination="y0G-KL-Xrd" kind="presentation" identifier="pinToMapFromMapView" id="HHT-KR-zWf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1U-6o-9Fc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -467,4 +476,7 @@ today?</string>
         <image name="pin" width="32" height="32"/>
         <image name="udacity" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="xU9-7N-umn"/>
+    </inferredMetricsTieBreakers>
 </document>
