@@ -132,7 +132,7 @@
         <!--On The Map-->
         <scene sceneID="QzI-Uc-3g4">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="uK0-Jx-OoK" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="uK0-Jx-OoK" customClass="PinsOnTableViewController" customModule="udacity_OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eCf-lG-SFW"/>
                         <viewControllerLayoutGuide type="bottom" id="CTI-lA-gUZ"/>
@@ -177,7 +177,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="l4R-5c-r99">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tn2-6V-mfC"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="tn2-6V-mfC">
+                            <connections>
+                                <action selector="logOutOfSession:" destination="uK0-Jx-OoK" id="ykT-Wp-sNx"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="refresh" id="cod-Gg-Qin"/>
                             <barButtonItem image="pin" id="lyj-XA-O91"/>
@@ -378,7 +382,7 @@ today?</string>
         <!--On The Map-->
         <scene sceneID="jc0-CS-ETE">
             <objects>
-                <viewController id="1lL-TF-Laq" sceneMemberID="viewController">
+                <viewController id="1lL-TF-Laq" customClass="PinsOnMapViewController" customModule="udacity_OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7sh-X3-vA3"/>
                         <viewControllerLayoutGuide type="bottom" id="7BX-rq-rlK"/>
@@ -398,7 +402,11 @@ today?</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="N7K-Uu-AFa">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="L4J-jI-c1F"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="L4J-jI-c1F">
+                            <connections>
+                                <action selector="logOutOfSession:" destination="1lL-TF-Laq" id="y8e-Ty-TPf"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="refresh" id="hI6-ZD-IaJ"/>
                             <barButtonItem image="pin" id="nAu-yd-jww"/>

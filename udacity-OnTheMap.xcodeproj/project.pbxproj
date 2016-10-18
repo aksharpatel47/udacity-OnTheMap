@@ -20,6 +20,8 @@
 		65FF91CA1DB4CC60000C2C73 /* UOTMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF91C91DB4CC60000C2C73 /* UOTMClient.swift */; };
 		65FF91CC1DB4CC77000C2C73 /* UOTMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF91CB1DB4CC77000C2C73 /* UOTMConstants.swift */; };
 		80E316818B5745374632CE26 /* Pods_udacity_OnTheMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A1564ABDD5CD69B7370D73 /* Pods_udacity_OnTheMap.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		D44BE4521DB68A80000563A7 /* PinsOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44BE4511DB68A80000563A7 /* PinsOnMapViewController.swift */; };
+		D44BE4541DB68BCF000563A7 /* PinsOnTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44BE4531DB68BCF000563A7 /* PinsOnTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		978A0AEFD6BB445BD8D757A7 /* Pods-udacity-OnTheMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-udacity-OnTheMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-udacity-OnTheMap/Pods-udacity-OnTheMap.release.xcconfig"; sourceTree = "<group>"; };
 		C9F84DAB82D3BCB97BD2B668 /* Pods-udacity-OnTheMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-udacity-OnTheMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-udacity-OnTheMap/Pods-udacity-OnTheMap.debug.xcconfig"; sourceTree = "<group>"; };
 		D3A1564ABDD5CD69B7370D73 /* Pods_udacity_OnTheMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_udacity_OnTheMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D44BE4511DB68A80000563A7 /* PinsOnMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsOnMapViewController.swift; sourceTree = "<group>"; };
+		D44BE4531DB68BCF000563A7 /* PinsOnTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsOnTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 				65FF91C61DB4C169000C2C73 /* udacity-OnTheMap.entitlements */,
 				653B38AA1DB0C6CF000D0E11 /* AppDelegate.swift */,
 				653B38AC1DB0C6CF000D0E11 /* LoginViewController.swift */,
+				D44BE4511DB68A80000563A7 /* PinsOnMapViewController.swift */,
+				D44BE4531DB68BCF000563A7 /* PinsOnTableViewController.swift */,
 				653B38AE1DB0C6CF000D0E11 /* Main.storyboard */,
 				653B38B11DB0C6D0000D0E11 /* Assets.xcassets */,
 				653B38B31DB0C6D0000D0E11 /* LaunchScreen.storyboard */,
@@ -270,11 +276,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44BE4541DB68BCF000563A7 /* PinsOnTableViewController.swift in Sources */,
 				653B38AD1DB0C6CF000D0E11 /* LoginViewController.swift in Sources */,
 				65F70DBD1DB62F3B00270F50 /* BasicAlert.swift in Sources */,
 				65CD6D231DB61F1A0029A87F /* UOTMConvenience.swift in Sources */,
 				653B38AB1DB0C6CF000D0E11 /* AppDelegate.swift in Sources */,
 				65F70DBF1DB63DEE00270F50 /* Constants.swift in Sources */,
+				D44BE4521DB68A80000563A7 /* PinsOnMapViewController.swift in Sources */,
 				65FF91CC1DB4CC77000C2C73 /* UOTMConstants.swift in Sources */,
 				65FF91CA1DB4CC60000C2C73 /* UOTMClient.swift in Sources */,
 			);
@@ -320,6 +328,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -370,6 +379,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -399,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9F84DAB82D3BCB97BD2B668 /* Pods-udacity-OnTheMap.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "udacity-OnTheMap/udacity-OnTheMap.entitlements";
 				DEVELOPMENT_TEAM = GAR9GU6C4G;
@@ -418,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 978A0AEFD6BB445BD8D757A7 /* Pods-udacity-OnTheMap.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "udacity-OnTheMap/udacity-OnTheMap.entitlements";
 				DEVELOPMENT_TEAM = GAR9GU6C4G;

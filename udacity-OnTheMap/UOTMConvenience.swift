@@ -40,12 +40,60 @@ extension UOTMClient {
     })
   }
   
+  func deleteSession(completion: @escaping (_ response: Any?, _ error: Error?) -> Void) {
+    guard let url = createUrl(forMethodName: Methods.session, withQueryParamters: nil) else {
+      let userInfo = [NSLocalizedDescriptionKey: "Could not generate url for the Delete request."]
+      completion(nil, NSError(domain: "taskForDeleteMethod", code: 0, userInfo: userInfo))
+      return
+    }
+    
+    var request = URLRequest(url: url)
+    request.httpMethod = "DELETE"
+    
+    var xsrfCookie: HTTPCookie? = nil
+    
+    if let cookies = HTTPCookieStorage.shared.cookies {
+      for cookie in cookies {
+        if cookie.name == "XSRF-TOKEN" {
+          xsrfCookie = cookie
+        }
+      }
+    }
+    
+    if let xsrfCookie = xsrfCookie {
+      request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+    }
+    
+    let task = URLSession.shared.dataTask(with: request, completionHandler: {
+      data, response, error in
+      
+      guard let data = data, error == nil else {
+        completion(nil, error)
+        return
+      }
+      
+      guard let newData = self.deserializeJSON(from: data) else {
+        let userInfo = [NSLocalizedDescriptionKey: "Error while parsing response data from Delete request"]
+        completion(nil, NSError(domain: "taskForDeleteMethod", code: 0, userInfo: userInfo))
+        return
+      }
+      
+      UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.sessionId)
+      
+      UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.expiration)
+      
+      completion(newData, nil)
+    })
+    
+    task.resume()
+  }
+  
   func saveSessionToken(from response: Any?) {
     guard let response = response as? [String:Any],
       let session = response[ResponseParameterKeys.session] as? [String:String],
       let id = session[ResponseParameterKeys.id],
       let expiration = session[ResponseParameterKeys.expiration] else {
-      return
+        return
     }
     
     UserDefaults.standard.set(id, forKey: Constants.OfflineDataKeys.sessionId)
