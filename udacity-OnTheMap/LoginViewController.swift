@@ -31,11 +31,21 @@ class LoginViewController: UIViewController {
       
       if let error = error as? URLError {
         if error.errorCode == -1009 {
+        
           showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need internet connection to log in.", onOkPressed: nil)
         } else {
           print("Your error code is ", error.errorCode)
         }
       }
+      
+      guard error == nil else {
+        return
+      }
+      
+      DispatchQueue.main.async {
+        self.successfulLogin()
+      }
+      
     })
   }
   
@@ -54,10 +64,20 @@ class LoginViewController: UIViewController {
         UOTMClient.shared.loginUsingFacebook(token: token.authenticationToken, completion: {
           response, error in
           
-          print(response, error)
+          guard error == nil else {
+            return
+          }
+          
+          DispatchQueue.main.async {
+            self.successfulLogin()
+          }
         })
       }
     })
+  }
+  
+  func successfulLogin() {
+    performSegue(withIdentifier: Constants.Segues.successfulLogin, sender: nil)
   }
 }
 
