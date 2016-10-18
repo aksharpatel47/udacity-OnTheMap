@@ -38,7 +38,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="WJB-Fy-JZF"/>
                                 </connections>
@@ -50,7 +50,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="zig-U7-Rc2"/>
                                 </connections>
@@ -65,7 +65,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginViaUsernamePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HjW-RN-nn7"/>
+                                    <action selector="loginViaEmail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F7X-i5-Yqn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcZ-MT-xb0">
@@ -74,12 +74,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T73-Hl-qOW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T73-Hl-qOW">
                                 <color key="backgroundColor" red="0.069278946476399206" green="0.4457162822862295" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="KDT-Pl-bYc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Login using Facebook">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -87,10 +86,16 @@
                                     <action selector="loginViaFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HPU-ih-yDL"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ia6-GP-Upk">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ajg-Wp-3ec"/>
+                                    <constraint firstAttribute="width" constant="30" id="cFj-k1-2gm"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="2it-RZ-sLA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="52" id="81m-xR-Wl3"/>
+                            <constraint firstItem="2it-RZ-sLA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="46" id="81m-xR-Wl3"/>
                             <constraint firstItem="5DU-Sh-wGE" firstAttribute="top" secondItem="zT9-Q3-Pke" secondAttribute="bottom" constant="8" id="AOJ-5R-uqI"/>
                             <constraint firstItem="5DU-Sh-wGE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="AcQ-lp-oZR"/>
                             <constraint firstItem="fcZ-MT-xb0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H6t-Vw-1Fc"/>
@@ -103,15 +108,18 @@
                             <constraint firstAttribute="trailing" secondItem="T73-Hl-qOW" secondAttribute="trailing" constant="32" id="XR9-S6-GXg"/>
                             <constraint firstItem="zT9-Q3-Pke" firstAttribute="top" secondItem="z6u-f4-Um4" secondAttribute="bottom" constant="8" id="YjW-G9-cry"/>
                             <constraint firstItem="z6u-f4-Um4" firstAttribute="top" secondItem="sUn-ki-fsx" secondAttribute="bottom" constant="16" id="bzN-vw-OnA"/>
+                            <constraint firstItem="Ia6-GP-Upk" firstAttribute="centerY" secondItem="T73-Hl-qOW" secondAttribute="centerY" id="hBT-CE-nrl"/>
                             <constraint firstAttribute="trailing" secondItem="zT9-Q3-Pke" secondAttribute="trailing" constant="32" id="jqH-R8-rKW"/>
                             <constraint firstItem="sUn-ki-fsx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mYq-1S-eSm"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T73-Hl-qOW" secondAttribute="bottom" constant="48" id="nMa-Xj-v9X"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T73-Hl-qOW" secondAttribute="bottom" constant="56" id="nMa-Xj-v9X"/>
+                            <constraint firstItem="Ia6-GP-Upk" firstAttribute="leading" secondItem="T73-Hl-qOW" secondAttribute="leading" constant="8" id="szI-xO-k0w"/>
                             <constraint firstItem="2it-RZ-sLA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tZw-FU-w0K"/>
                             <constraint firstItem="sUn-ki-fsx" firstAttribute="top" secondItem="2it-RZ-sLA" secondAttribute="bottom" constant="8" id="usd-RY-qAx"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="z6u-f4-Um4" id="9YP-MD-U0g"/>
+                        <outlet property="facebookButton" destination="T73-Hl-qOW" id="wed-m2-p3K"/>
                         <outlet property="passwordTextField" destination="zT9-Q3-Pke" id="izV-l6-n7t"/>
                     </connections>
                 </viewController>
@@ -121,6 +129,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fb_icon" width="50" height="50"/>
         <image name="udacity" width="256" height="256"/>
     </resources>
 </document>
