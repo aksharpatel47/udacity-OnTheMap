@@ -415,7 +415,7 @@ today?</string>
         <!--Tab Bar Controller-->
         <scene sceneID="qeK-wj-VKT">
             <objects>
-                <tabBarController id="ZD3-D8-lyt" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabViewController" id="ZD3-D8-lyt" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Dwz-tf-8MW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

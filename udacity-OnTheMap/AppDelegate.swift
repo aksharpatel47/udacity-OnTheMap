@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     
+    if let sessionId = UserDefaults.standard.object(forKey: Constants.OfflineDataKeys.sessionId) as? String , !sessionId.isEmpty {
+      let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+      window?.rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabViewController")
+    }
+    
     return true
   }
   

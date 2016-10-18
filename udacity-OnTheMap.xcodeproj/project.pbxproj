@@ -16,6 +16,7 @@
 		65CD6D231DB61F1A0029A87F /* UOTMConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CD6D221DB61F1A0029A87F /* UOTMConvenience.swift */; };
 		65F70DBD1DB62F3B00270F50 /* BasicAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F70DBC1DB62F3B00270F50 /* BasicAlert.swift */; };
 		65F70DBF1DB63DEE00270F50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F70DBE1DB63DEE00270F50 /* Constants.swift */; };
+		65F70DC11DB65B8100270F50 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F70DC01DB65B8100270F50 /* MapKit.framework */; };
 		65FF91CA1DB4CC60000C2C73 /* UOTMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF91C91DB4CC60000C2C73 /* UOTMClient.swift */; };
 		65FF91CC1DB4CC77000C2C73 /* UOTMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FF91CB1DB4CC77000C2C73 /* UOTMConstants.swift */; };
 		80E316818B5745374632CE26 /* Pods_udacity_OnTheMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A1564ABDD5CD69B7370D73 /* Pods_udacity_OnTheMap.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -35,6 +36,7 @@
 		65CD6D221DB61F1A0029A87F /* UOTMConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UOTMConvenience.swift; sourceTree = "<group>"; };
 		65F70DBC1DB62F3B00270F50 /* BasicAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAlert.swift; sourceTree = "<group>"; };
 		65F70DBE1DB63DEE00270F50 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		65F70DC01DB65B8100270F50 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		65FF91C61DB4C169000C2C73 /* udacity-OnTheMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "udacity-OnTheMap.entitlements"; sourceTree = "<group>"; };
 		65FF91C91DB4CC60000C2C73 /* UOTMClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UOTMClient.swift; sourceTree = "<group>"; };
 		65FF91CB1DB4CC77000C2C73 /* UOTMConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UOTMConstants.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F70DC11DB65B8100270F50 /* MapKit.framework in Frameworks */,
 				80E316818B5745374632CE26 /* Pods_udacity_OnTheMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +61,7 @@
 		3F95B662456EB71EA9103635 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65F70DC01DB65B8100270F50 /* MapKit.framework */,
 				655CD0471DB613A000E7C1F3 /* Foundation.framework */,
 				D3A1564ABDD5CD69B7370D73 /* Pods_udacity_OnTheMap.framework */,
 			);

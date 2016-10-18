@@ -17,7 +17,12 @@ extension UOTMClient {
       ]
     ]
     
-    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, body: body, completionForPost: completion)
+    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, body: body, completionForPost: {
+      response, error in
+      
+      self.saveSessionToken(from: response)
+      completion(response, error)
+    })
   }
   
   func loginUsingFacebook(token: String, completion: @escaping (_ response: Any?, _ error: Error?) -> Void) {
@@ -27,6 +32,23 @@ extension UOTMClient {
       ]
     ]
     
-    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, body: body, completionForPost: completion)
+    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, body: body, completionForPost: {
+      response, error in
+      
+      self.saveSessionToken(from: response)
+      completion(response, error)
+    })
+  }
+  
+  func saveSessionToken(from response: Any?) {
+    guard let response = response as? [String:Any],
+      let session = response[ResponseParameterKeys.session] as? [String:String],
+      let id = session[ResponseParameterKeys.id],
+      let expiration = session[ResponseParameterKeys.expiration] else {
+      return
+    }
+    
+    UserDefaults.standard.set(id, forKey: Constants.OfflineDataKeys.sessionId)
+    UserDefaults.standard.set(expiration, forKey: Constants.OfflineDataKeys.expiration)
   }
 }

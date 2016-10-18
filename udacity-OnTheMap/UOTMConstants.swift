@@ -21,4 +21,10 @@ extension UOTMClient {
     static let facebookMobile = "facebook_mobile"
     static let accessToken = "access_token"
   }
+  
+  struct ResponseParameterKeys {
+    static let session = "session"
+    static let id = "id"
+    static let expiration = "expiration"
+  }
 }

@@ -12,4 +12,9 @@ struct Constants {
   struct Segues {
     static let successfulLogin = "successfulLogin"
   }
+  
+  struct OfflineDataKeys {
+    static let sessionId = "sessionId"
+    static let expiration = "sessionExpirationDate"
+  }
 }
