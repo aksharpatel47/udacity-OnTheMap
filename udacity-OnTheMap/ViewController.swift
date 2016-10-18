@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  udacity-OnTheMap
 //
 //  Created by Techniexe on 14/10/16.
@@ -9,30 +9,38 @@
 import UIKit
 import FacebookLogin
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
+  
+  @IBOutlet weak var emailTextField: UITextField!
+  @IBOutlet weak var passwordTextField: UITextField!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    let button = LoginButton(readPermissions: [.publicProfile, .email])
-    button.delegate = self
-    button.center = view.center
-    view.addSubview(button)
+  }
+  
+  @IBAction func loginViaUsernamePassword(_ sender: UIButton) {
+    
+  }
+  
+  @IBAction func loginViaFacebook(_ sender: UIButton) {
+    let loginManager = LoginManager()
+    loginManager.logIn([.publicProfile, .email], viewController: self, completion: {
+      loginResult in
+      switch loginResult {
+      case .failed(let error):
+        print(error)
+      case .cancelled:
+        print("Cancelled")
+      case .success(let grantedPermissions, let declinedPermissions, let token):
+        print(grantedPermissions, declinedPermissions, token)
+      }
+    })
   }
 }
 
-extension ViewController : LoginButtonDelegate {
-  func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-    switch result {
-    case .success(let grantedPermissions, let declinedPermissions, let token):
-      print(grantedPermissions, declinedPermissions, token)
-    case .failed(let error):
-      print(error)
-    case .cancelled:
-      print("Login Cancelled")
-    }
-  }
-  
-  func loginButtonDidLogOut(_ loginButton: LoginButton) {
-    
+extension LoginViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
   }
 }
