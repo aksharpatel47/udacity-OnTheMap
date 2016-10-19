@@ -13,6 +13,7 @@
 		653B38B21DB0C6D0000D0E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B11DB0C6D0000D0E11 /* Assets.xcassets */; };
 		653B38B51DB0C6D0000D0E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B31DB0C6D0000D0E11 /* LaunchScreen.storyboard */; };
 		653B38BD1DB0C809000D0E11 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 653B38BC1DB0C809000D0E11 /* .gitignore */; };
+		659F5FB41DB73A31002FB301 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659F5FB31DB73A31002FB301 /* StudentLocation.swift */; };
 		65CD6D231DB61F1A0029A87F /* UOTMConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CD6D221DB61F1A0029A87F /* UOTMConvenience.swift */; };
 		65F70DBD1DB62F3B00270F50 /* BasicAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F70DBC1DB62F3B00270F50 /* BasicAlert.swift */; };
 		65F70DBF1DB63DEE00270F50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F70DBE1DB63DEE00270F50 /* Constants.swift */; };
@@ -35,6 +36,7 @@
 		653B38B61DB0C6D0000D0E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653B38BC1DB0C809000D0E11 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		655CD0471DB613A000E7C1F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		659F5FB31DB73A31002FB301 /* StudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		65CD6D221DB61F1A0029A87F /* UOTMConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UOTMConvenience.swift; sourceTree = "<group>"; };
 		65F70DBC1DB62F3B00270F50 /* BasicAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAlert.swift; sourceTree = "<group>"; };
 		65F70DBE1DB63DEE00270F50 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				65FF91C91DB4CC60000C2C73 /* UOTMClient.swift */,
 				65CD6D221DB61F1A0029A87F /* UOTMConvenience.swift */,
 				65FF91CB1DB4CC77000C2C73 /* UOTMConstants.swift */,
+				659F5FB31DB73A31002FB301 /* StudentLocation.swift */,
 			);
 			name = UOTM;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				65F70DBF1DB63DEE00270F50 /* Constants.swift in Sources */,
 				D44BE4521DB68A80000563A7 /* PinsOnMapViewController.swift in Sources */,
 				65FF91CC1DB4CC77000C2C73 /* UOTMConstants.swift in Sources */,
+				659F5FB41DB73A31002FB301 /* StudentLocation.swift in Sources */,
 				65FF91CA1DB4CC60000C2C73 /* UOTMClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

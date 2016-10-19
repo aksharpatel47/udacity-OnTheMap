@@ -23,8 +23,21 @@ extension UOTMClient {
   }
   
   struct ResponseParameterKeys {
+    // Session Keys
     static let session = "session"
     static let id = "id"
     static let expiration = "expiration"
+    
+    // Student Location Keys
+    static let firstName = "firstName"
+    static let lastName = "lastName"
+    static let latitude = "latitude"
+    static let longitude = "longitude"
+    static let mapString = "mapString"
+    static let mediaUrl = "mediaURL"
+    static let objectId = "objectId"
+    static let uniqueKey = "uniqueKey"
+    static let updatedAt = "updatedAt"
+    static let createdAt = "createdAt"
   }
 }
