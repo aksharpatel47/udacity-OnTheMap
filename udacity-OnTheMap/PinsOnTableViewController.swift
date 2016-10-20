@@ -57,6 +57,7 @@ extension PinsOnTableViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.pins, for: indexPath)
     cell.textLabel?.text = studentLocations[indexPath.row].fullName
+    cell.detailTextLabel?.text = studentLocations[indexPath.row].mediaUrl
     return cell
   }
 }
