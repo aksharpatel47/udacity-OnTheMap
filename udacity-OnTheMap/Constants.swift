@@ -41,6 +41,7 @@ struct Constants {
     
     static let logOutMessage = "Error while Logging Out. Please try again."
     static let studentLocationsMessage = "Error while getting Student Locations. Please try again."
+    static let newStudentLocationMessage = "Error while posting new Student Location. Please try again."
     
   }
 }

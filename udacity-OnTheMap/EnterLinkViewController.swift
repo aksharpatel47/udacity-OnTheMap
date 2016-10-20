@@ -38,7 +38,15 @@ class EnterLinkViewController: UIViewController {
       self.updateUiAfterNetworkRequest()
       
       guard error == nil else {
-        //TODO: Handle Error
+        
+        DispatchQueue.main.async {
+          if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
+            showBasicAlert(onController: self, withTitle: Constants.ErrorMessages.noInternetTitle, message: Constants.ErrorMessages.noInternetMessage, onOkPressed: nil)
+          } else {
+            showBasicAlert(onController: self, withTitle: Constants.ErrorMessages.sorryTitle, message: Constants.ErrorMessages.newStudentLocationMessage, onOkPressed: nil)
+          }
+        }
+        
         return
       }
       
