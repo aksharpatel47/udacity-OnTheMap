@@ -17,4 +17,8 @@ struct Constants {
     static let sessionId = "sessionId"
     static let expiration = "sessionExpirationDate"
   }
+  
+  struct CellIdentifiers {
+    static let pins = "pins"
+  }
 }

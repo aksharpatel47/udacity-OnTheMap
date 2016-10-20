@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import MapKit
 
 class PinsOnMapViewController: UIViewController {
   
   let appDelegate = UIApplication.shared.delegate as! AppDelegate
+  var studentLocationPins = [StudentLocationPin]()
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  @IBOutlet weak var mapView: MKMapView!
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    UOTMClient.shared.getStudentLocations(completion: {
+      studentLocations, error in
+      
+      guard let studentLocations = studentLocations, error == nil else {
+        // TODO Handle Error
+        return
+      }
+      
+      self.pinOnMap(locations: studentLocations)
+    })
   }
   
   @IBAction func logOutOfSession(_ sender: UIBarButtonItem) {
@@ -30,4 +45,30 @@ class PinsOnMapViewController: UIViewController {
     })
   }
   
+  @IBAction func reloadStudentLocations(_ sender: UIBarButtonItem) {
+    UOTMClient.shared.getStudentLocationsFromServer(completion: {
+      studentLocations, error in
+      
+      guard let studentLocations = studentLocations, error == nil else {
+        // TODO Handle error
+        return
+      }
+      
+      self.pinOnMap(locations: studentLocations)
+    })
+  }
+  
+  func pinOnMap(locations: [StudentLocation]) {
+    
+    self.studentLocationPins = []
+    
+    for location in locations {
+      self.studentLocationPins.append(StudentLocationPin(studentLocation: location))
+    }
+    
+    DispatchQueue.main.async {
+      self.mapView.removeAnnotations(self.mapView.annotations)
+      self.mapView.addAnnotations(self.studentLocationPins)
+    }
+  }
 }

@@ -7,14 +7,20 @@
 //
 
 import Foundation
+import MapKit
 
 struct StudentLocation {
   var firstName: String
   var lastName: String
+  var fullName: String {
+    get {
+      return firstName + " " + lastName
+    }
+  }
   var latitude: Double
   var longitude: Double
   var mapString: String
-  var mediaUrl: URL?
+  var mediaUrl: String
   var objectId: String
   var uniqueKey: String
   var updatedAt: String
@@ -26,7 +32,7 @@ struct StudentLocation {
     latitude = dictionary[UOTMClient.ResponseParameterKeys.latitude] as! Double
     longitude = dictionary[UOTMClient.ResponseParameterKeys.longitude] as! Double
     mapString = dictionary[UOTMClient.ResponseParameterKeys.mapString] as! String
-    mediaUrl = URL(string: dictionary[UOTMClient.ResponseParameterKeys.mediaUrl] as! String)
+    mediaUrl = dictionary[UOTMClient.ResponseParameterKeys.mediaUrl] as! String
     objectId = dictionary[UOTMClient.ResponseParameterKeys.objectId] as! String
     uniqueKey = dictionary[UOTMClient.ResponseParameterKeys.uniqueKey] as! String
     updatedAt = dictionary[UOTMClient.ResponseParameterKeys.updatedAt] as! String

@@ -166,6 +166,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uK0-Jx-OoK" id="59n-5h-gz7"/>
+                                    <outlet property="delegate" destination="uK0-Jx-OoK" id="lVH-g2-wcg"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -188,6 +192,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="studentLocationsTableView" destination="voI-yg-nI0" id="wxU-H1-RjR"/>
                         <segue destination="y0G-KL-Xrd" kind="presentation" identifier="pinToMapFromTableView" id="xU9-7N-umn"/>
                     </connections>
                 </viewController>
@@ -408,11 +413,16 @@ today?</string>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="refresh" id="hI6-ZD-IaJ"/>
+                            <barButtonItem systemItem="refresh" id="hI6-ZD-IaJ">
+                                <connections>
+                                    <action selector="reloadStudentLocations:" destination="1lL-TF-Laq" id="RdK-Z9-qS1"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="pin" id="nAu-yd-jww"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="mapView" destination="jla-dY-pl4" id="CZH-Cl-kQt"/>
                         <segue destination="y0G-KL-Xrd" kind="presentation" identifier="pinToMapFromMapView" id="HHT-KR-zWf"/>
                     </connections>
                 </viewController>
@@ -485,6 +495,6 @@ today?</string>
         <image name="udacity" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xU9-7N-umn"/>
+        <segue reference="HHT-KR-zWf"/>
     </inferredMetricsTieBreakers>
 </document>
