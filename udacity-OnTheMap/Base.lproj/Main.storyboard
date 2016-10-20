@@ -148,11 +148,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d3b-XZ-JUN" id="ZIz-DX-Ydv">
-                                            <frame key="frameInset" width="342" height="43.5"/>
+                                            <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yk1-Yk-ukh">
-                                                    <frame key="frameInset" minX="62" minY="5" width="33.5" height="20.5"/>
+                                                    <frame key="frameInset" minX="62" minY="4" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -163,7 +163,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M56-rK-LhF">
-                                                    <frame key="frameInset" minX="62" minY="25.5" width="44" height="14.5"/>
+                                                    <frame key="frameInset" minX="62" minY="25" width="44" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -407,7 +407,9 @@ today?</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="8kb-9F-DaU" id="cbL-BX-dLv"/>
                         <outlet property="mapView" destination="rhG-QR-mEg" id="2N3-gC-uS0"/>
+                        <outlet property="submitButton" destination="9vL-wb-TSS" id="IEg-hU-n0j"/>
                         <outlet property="urlTextField" destination="0fw-iE-Xnt" id="LAO-g4-teo"/>
                     </connections>
                 </viewController>

@@ -13,6 +13,8 @@ class EnterLinkViewController: UIViewController {
   
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var urlTextField: UITextField!
+  @IBOutlet weak var cancelButton: UIBarButtonItem!
+  @IBOutlet weak var submitButton: UIButton!
   
   /// (segue!)
   var studentLocationPin: StudentLocationPin!
@@ -28,8 +30,12 @@ class EnterLinkViewController: UIViewController {
     
     studentLocationPin.subtitle = mediaUrlString
     
+    prepareUiForNetWorkRequest()
+    
     UOTMClient.shared.postStudentLocation(studentLocationPin: studentLocationPin, completion: {
       error in
+      
+      self.updateUiAfterNetworkRequest()
       
       guard error == nil else {
         //TODO: Handle Error
@@ -45,6 +51,26 @@ class EnterLinkViewController: UIViewController {
   
   @IBAction func cancelPostingNewPin(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
+  }
+  
+  func prepareUiForNetWorkRequest() {
+    DispatchQueue.main.async {
+      self.urlTextField.isEnabled = false
+      self.cancelButton.isEnabled = false
+      self.submitButton.isEnabled = false
+      self.submitButton.backgroundColor = UIColor.darkGray
+      self.submitButton.setTitleColor(UIColor.gray, for: .normal)
+    }
+  }
+  
+  func updateUiAfterNetworkRequest() {
+    DispatchQueue.main.async {
+      self.urlTextField.isEnabled = true
+      self.cancelButton.isEnabled = true
+      self.submitButton.isEnabled = true
+      self.submitButton.backgroundColor = UIColor.white
+      self.submitButton.setTitleColor(Constants.Colors.blue, for: .normal)
+    }
   }
 }
 
