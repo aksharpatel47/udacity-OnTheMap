@@ -39,8 +39,13 @@ class PinsOnMapViewController: UIViewController {
   }
   
   @IBAction func logOutOfSession(_ sender: UIBarButtonItem) {
+    
+    prepareUiForNetworkRequest()
+    
     UOTMClient.shared.deleteSession(completion: {
       result, error in
+      
+      self.updateUiAfterNetworkRequest()
       
       guard error == nil else {
         //TODO: Handle Error
