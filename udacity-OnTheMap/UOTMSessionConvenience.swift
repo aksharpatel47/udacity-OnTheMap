@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FacebookLogin
 
 extension UOTMClient {
   func loginUsingEmail(username: String, password: String, completion: @escaping (_ reponse: Any?, _ error: Error?) -> Void) {
@@ -83,8 +84,13 @@ extension UOTMClient {
       }
       
       UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.sessionId)
-      
       UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.expiration)
+      
+      if let _ = UserDefaults.standard.object(forKey: Constants.OfflineDataKeys.facebookToken) {
+        let loginManager = LoginManager()
+        loginManager.logOut()
+        UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.facebookToken)
+      }
       
       completion(newData, nil)
     })
