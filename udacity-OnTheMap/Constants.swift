@@ -22,4 +22,8 @@ struct Constants {
   struct CellIdentifiers {
     static let pins = "pins"
   }
+  
+  struct PinIdentifiers {
+    static let mapPin = "mapPin"
+  }
 }

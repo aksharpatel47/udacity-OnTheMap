@@ -23,7 +23,7 @@ class PinsOnMapViewController: UIViewController {
       studentLocations, error in
       
       guard let studentLocations = studentLocations, error == nil else {
-        // TODO Handle Error
+        //TODO: Handle Error
         return
       }
       
@@ -36,6 +36,7 @@ class PinsOnMapViewController: UIViewController {
       result, error in
       
       guard error == nil else {
+        //TODO: Handle Error
         return
       }
       
@@ -70,5 +71,33 @@ class PinsOnMapViewController: UIViewController {
       self.mapView.removeAnnotations(self.mapView.annotations)
       self.mapView.addAnnotations(self.studentLocationPins)
     }
+  }
+}
+
+extension PinsOnMapViewController: MKMapViewDelegate {
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    guard let annotation = annotation as? StudentLocationPin else {
+      return nil
+    }
+    
+    guard let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: Constants.PinIdentifiers.mapPin) as? MKPinAnnotationView else {
+      let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: Constants.PinIdentifiers.mapPin)
+      view.canShowCallout = true
+      view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+      return view
+    }
+    
+    dequeuedView.annotation = annotation
+    return dequeuedView
+  }
+  
+  func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    guard let annotation = view.annotation as? StudentLocationPin,
+      let mediaUrlString = annotation.subtitle,
+      let mediaUrl = URL(string: mediaUrlString) else {
+        return
+    }
+    
+    UIApplication.shared.open(mediaUrl, options: [:], completionHandler: nil)
   }
 }
