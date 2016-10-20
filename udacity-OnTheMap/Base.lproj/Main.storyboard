@@ -199,22 +199,25 @@
                                     <action selector="reloadStudentLocations:" destination="uK0-Jx-OoK" id="g7u-cN-fyU"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="pin" id="lyj-XA-O91"/>
+                            <barButtonItem image="pin" id="lyj-XA-O91">
+                                <connections>
+                                    <segue destination="y0G-KL-Xrd" kind="presentation" id="QYK-0h-SAF"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="studentLocationsTableView" destination="voI-yg-nI0" id="wxU-H1-RjR"/>
-                        <segue destination="y0G-KL-Xrd" kind="presentation" identifier="pinToMapFromTableView" id="xU9-7N-umn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbH-2S-VhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2884" y="449.32533733133437"/>
         </scene>
-        <!--View Controller-->
+        <!--Enter Location View Controller-->
         <scene sceneID="Fo1-wB-0o3">
             <objects>
-                <viewController id="y0G-KL-Xrd" sceneMemberID="viewController">
+                <viewController id="y0G-KL-Xrd" customClass="EnterLocationViewController" customModule="udacity_OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hvf-dG-tnR"/>
                         <viewControllerLayoutGuide type="bottom" id="H88-hR-XdL"/>
@@ -229,6 +232,9 @@
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="0.20720512360000001" green="0.44035898229999998" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelPostingNewPin:" destination="y0G-KL-Xrd" eventType="touchUpInside" id="fLJ-Tg-QgV"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JL7-aQ-Kol">
                                         <attributedString key="attributedText">
@@ -279,6 +285,9 @@ today?</string>
                                         <state key="normal" title="Find on the Map">
                                             <color key="titleColor" red="0.20720512360000001" green="0.44035898229999998" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="findLocationOnMap:" destination="y0G-KL-Xrd" eventType="touchUpInside" id="8jf-i6-pUN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -288,11 +297,14 @@ today?</string>
                                     <constraint firstItem="NcT-IE-rlY" firstAttribute="centerY" secondItem="fw6-N0-YWs" secondAttribute="centerY" id="dN4-Vs-lxm"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="You Location, Country" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="adX-ba-t3P">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Enter Your Location Here..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="adX-ba-t3P">
                                 <color key="backgroundColor" red="0.20720512361330629" green="0.44035898227732728" blue="0.57499289512634277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="y0G-KL-Xrd" id="qdU-hv-QIp"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -313,17 +325,18 @@ today?</string>
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="QrE-54-ebN"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="The-lz-gQv" kind="show" identifier="AddLink" id="5ud-KZ-hvO"/>
+                        <outlet property="locationTextView" destination="adX-ba-t3P" id="hiZ-Ro-pdX"/>
+                        <segue destination="The-lz-gQv" kind="show" identifier="goToEnterLink" id="y5L-Bi-xFW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ljv-2Y-owy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4069.5999999999999" y="76.911544227886068"/>
         </scene>
-        <!--View Controller-->
+        <!--Enter Link View Controller-->
         <scene sceneID="hHW-oD-77c">
             <objects>
-                <viewController id="The-lz-gQv" sceneMemberID="viewController">
+                <viewController id="The-lz-gQv" customClass="EnterLinkViewController" customModule="udacity_OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SmM-j6-6Sc"/>
                         <viewControllerLayoutGuide type="bottom" id="zSl-5t-Xws"/>
@@ -433,12 +446,15 @@ today?</string>
                                     <action selector="reloadStudentLocations:" destination="1lL-TF-Laq" id="ax7-6w-iHz"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="pin" id="nAu-yd-jww"/>
+                            <barButtonItem image="pin" id="nAu-yd-jww">
+                                <connections>
+                                    <segue destination="y0G-KL-Xrd" kind="presentation" id="JrG-aI-abO"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="jla-dY-pl4" id="CZH-Cl-kQt"/>
-                        <segue destination="y0G-KL-Xrd" kind="presentation" identifier="pinToMapFromMapView" id="HHT-KR-zWf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1U-6o-9Fc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -510,6 +526,6 @@ today?</string>
         <image name="udacity" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HHT-KR-zWf"/>
+        <segue reference="QYK-0h-SAF"/>
     </inferredMetricsTieBreakers>
 </document>

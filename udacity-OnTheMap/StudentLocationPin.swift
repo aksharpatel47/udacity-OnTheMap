@@ -14,6 +14,12 @@ class StudentLocationPin: NSObject, MKAnnotation {
   var subtitle: String?
   var coordinate: CLLocationCoordinate2D
   
+  init(coordinate: CLLocationCoordinate2D) {
+    self.coordinate = coordinate
+    
+    super.init()
+  }
+  
   init(studentLocation: StudentLocation) {
     coordinate = CLLocationCoordinate2D(latitude: studentLocation.latitude, longitude: studentLocation.longitude)
     title = studentLocation.fullName
