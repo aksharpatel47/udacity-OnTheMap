@@ -12,11 +12,44 @@ class UOTMClient {
   
   var shared = URLSession.shared
   
-//  func taskForGetMethod() -> URLSessionTask {
-//  
-//  }
+  var studentLocations = [StudentLocation]()
   
-  func taskForPostMethod(method: String, queryParameters: [String:String]?, body: Any?, completionForPost: @escaping (_ response: Any?, _ error: Error?) -> Void) -> URLSessionTask? {
+  func taskForGetMethod(method: String, queryParameters: [String:Any]?, headers: [String:Any]?, extractSubdata: Bool, completionForGet: @escaping (_ response: Any?, _ error: Error?) -> Void) -> URLSessionTask? {
+    
+    guard let url = createUrl(forMethodName: method, withQueryParamters: queryParameters) else {
+      return nil
+    }
+    
+    var request = URLRequest(url: url)
+    
+    if let headers = headers {
+      for (key, value) in headers {
+        request.addValue("\(value)", forHTTPHeaderField: key)
+      }
+    }
+    
+    let task = shared.dataTask(with: request, completionHandler: {
+      data, response, error in
+      
+      guard let data = data, error == nil else {
+        completionForGet(nil, error)
+        return
+      }
+      
+      guard let newData = self.deserializeToJson(from: data, extractSubdata: extractSubdata) else {
+        //FIXME: Add error handler here.
+        return
+      }
+      
+      completionForGet(newData, nil)
+    })
+    
+    task.resume()
+    
+    return task
+  }
+  
+  func taskForPostMethod(method: String, queryParameters: [String:String]?, body: Any?, extractSubdata: Bool, completionForPost: @escaping (_ response: Any?, _ error: Error?) -> Void) -> URLSessionTask? {
     
     guard let url = createUrl(forMethodName: method, withQueryParamters: queryParameters) else {
       return nil
@@ -40,7 +73,7 @@ class UOTMClient {
         return
       }
       
-      completionForPost(self.deserializeJSON(from: data), error)
+      completionForPost(self.deserializeToJson(from: data, extractSubdata: extractSubdata), error)
     })
     
     task.resume()
@@ -48,12 +81,12 @@ class UOTMClient {
     return task
   }
   
-  func deserializeJSON(from data: Data) -> Any? {
-    let newData = data.subdata(in: Range<Int>(5..<data.count))
+  func deserializeToJson(from data: Data, extractSubdata: Bool) -> Any? {
+    let newData = extractSubdata ? data.subdata(in: Range<Int>(5..<data.count)) : data
     return try? JSONSerialization.jsonObject(with: newData, options: .allowFragments)
   }
   
-  func createUrl(forMethodName methodName: String, withQueryParamters queryParameters: [String:String]?) -> URL? {
+  func createUrl(forMethodName methodName: String, withQueryParamters queryParameters: [String:Any]?) -> URL? {
     guard var urlComponents = URLComponents(string: methodName) else {
       return nil
     }
@@ -62,7 +95,7 @@ class UOTMClient {
     
     if let queryParameters = queryParameters {
       for (key, value) in queryParameters {
-        queryItems.append(URLQueryItem(name: key, value: value))
+        queryItems.append(URLQueryItem(name: key, value: "\(value)"))
       }
     }
     

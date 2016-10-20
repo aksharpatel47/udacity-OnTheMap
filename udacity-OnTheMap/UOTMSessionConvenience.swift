@@ -17,7 +17,7 @@ extension UOTMClient {
       ]
     ]
     
-    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, body: body, completionForPost: {
+    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, body: body, extractSubdata: true, completionForPost: {
       response, error in
       
       self.saveSessionToken(from: response)
@@ -32,7 +32,7 @@ extension UOTMClient {
       ]
     ]
     
-    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, body: body, completionForPost: {
+    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, body: body, extractSubdata: true, completionForPost: {
       response, error in
       
       self.saveSessionToken(from: response)
@@ -72,7 +72,7 @@ extension UOTMClient {
         return
       }
       
-      guard let newData = self.deserializeJSON(from: data) else {
+      guard let newData = self.deserializeToJson(from: data, extractSubdata: true) else {
         let userInfo = [NSLocalizedDescriptionKey: "Error while parsing response data from Delete request"]
         completion(nil, NSError(domain: "taskForDeleteMethod", code: 0, userInfo: userInfo))
         return

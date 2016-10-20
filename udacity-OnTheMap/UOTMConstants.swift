@@ -39,5 +39,6 @@ extension UOTMClient {
     static let uniqueKey = "uniqueKey"
     static let updatedAt = "updatedAt"
     static let createdAt = "createdAt"
+    static let results = "results"
   }
 }

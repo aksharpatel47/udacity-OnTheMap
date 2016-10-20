@@ -13,9 +13,10 @@
 		653B38B21DB0C6D0000D0E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B11DB0C6D0000D0E11 /* Assets.xcassets */; };
 		653B38B51DB0C6D0000D0E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653B38B31DB0C6D0000D0E11 /* LaunchScreen.storyboard */; };
 		653B38BD1DB0C809000D0E11 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 653B38BC1DB0C809000D0E11 /* .gitignore */; };
+		655C21EA1DB888D9008DDA48 /* StudentLocationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C21E91DB888D9008DDA48 /* StudentLocationPin.swift */; };
 		659F5FB41DB73A31002FB301 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659F5FB31DB73A31002FB301 /* StudentLocation.swift */; };
 		659F5FB61DB742EF002FB301 /* UOTMStudentLocationConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659F5FB51DB742EF002FB301 /* UOTMStudentLocationConvenience.swift */; };
-		65CD6D231DB61F1A0029A87F /* UOTMConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CD6D221DB61F1A0029A87F /* UOTMConvenience.swift */; };
+		65CD6D231DB61F1A0029A87F /* UOTMSessionConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CD6D221DB61F1A0029A87F /* UOTMSessionConvenience.swift */; };
 		65F70DBD1DB62F3B00270F50 /* BasicAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F70DBC1DB62F3B00270F50 /* BasicAlert.swift */; };
 		65F70DBF1DB63DEE00270F50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F70DBE1DB63DEE00270F50 /* Constants.swift */; };
 		65F70DC11DB65B8100270F50 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F70DC01DB65B8100270F50 /* MapKit.framework */; };
@@ -36,10 +37,11 @@
 		653B38B41DB0C6D0000D0E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		653B38B61DB0C6D0000D0E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653B38BC1DB0C809000D0E11 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		655C21E91DB888D9008DDA48 /* StudentLocationPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocationPin.swift; sourceTree = "<group>"; };
 		655CD0471DB613A000E7C1F3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		659F5FB31DB73A31002FB301 /* StudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		659F5FB51DB742EF002FB301 /* UOTMStudentLocationConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UOTMStudentLocationConvenience.swift; sourceTree = "<group>"; };
-		65CD6D221DB61F1A0029A87F /* UOTMConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UOTMConvenience.swift; sourceTree = "<group>"; };
+		65CD6D221DB61F1A0029A87F /* UOTMSessionConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UOTMSessionConvenience.swift; sourceTree = "<group>"; };
 		65F70DBC1DB62F3B00270F50 /* BasicAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAlert.swift; sourceTree = "<group>"; };
 		65F70DBE1DB63DEE00270F50 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		65F70DC01DB65B8100270F50 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -135,10 +137,11 @@
 			isa = PBXGroup;
 			children = (
 				65FF91C91DB4CC60000C2C73 /* UOTMClient.swift */,
-				65CD6D221DB61F1A0029A87F /* UOTMConvenience.swift */,
+				65CD6D221DB61F1A0029A87F /* UOTMSessionConvenience.swift */,
 				65FF91CB1DB4CC77000C2C73 /* UOTMConstants.swift */,
 				659F5FB31DB73A31002FB301 /* StudentLocation.swift */,
 				659F5FB51DB742EF002FB301 /* UOTMStudentLocationConvenience.swift */,
+				655C21E91DB888D9008DDA48 /* StudentLocationPin.swift */,
 			);
 			name = UOTM;
 			sourceTree = "<group>";
@@ -286,8 +289,9 @@
 				653B38AD1DB0C6CF000D0E11 /* LoginViewController.swift in Sources */,
 				659F5FB61DB742EF002FB301 /* UOTMStudentLocationConvenience.swift in Sources */,
 				65F70DBD1DB62F3B00270F50 /* BasicAlert.swift in Sources */,
-				65CD6D231DB61F1A0029A87F /* UOTMConvenience.swift in Sources */,
+				65CD6D231DB61F1A0029A87F /* UOTMSessionConvenience.swift in Sources */,
 				653B38AB1DB0C6CF000D0E11 /* AppDelegate.swift in Sources */,
+				655C21EA1DB888D9008DDA48 /* StudentLocationPin.swift in Sources */,
 				65F70DBF1DB63DEE00270F50 /* Constants.swift in Sources */,
 				D44BE4521DB68A80000563A7 /* PinsOnMapViewController.swift in Sources */,
 				65FF91CC1DB4CC77000C2C73 /* UOTMConstants.swift in Sources */,
