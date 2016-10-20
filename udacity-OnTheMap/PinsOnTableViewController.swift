@@ -47,6 +47,23 @@ class PinsOnTableViewController: UIViewController {
       }
     })
   }
+  
+  @IBAction func reloadStudentLocations(_ sender: UIBarButtonItem) {
+    UOTMClient.shared.getStudentLocationsFromServer(completion: {
+      result, error in
+      
+      guard let result = result, error == nil else {
+        //TODO: Handle error
+        return
+      }
+      
+      self.studentLocations = result
+      
+      DispatchQueue.main.async {
+        self.studentLocationsTableView.reloadData()
+      }
+    })
+  }
 }
 
 extension PinsOnTableViewController: UITableViewDataSource {

@@ -194,7 +194,11 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="refresh" id="cod-Gg-Qin"/>
+                            <barButtonItem systemItem="refresh" id="cod-Gg-Qin">
+                                <connections>
+                                    <action selector="reloadStudentLocations:" destination="uK0-Jx-OoK" id="g7u-cN-fyU"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="pin" id="lyj-XA-O91"/>
                         </rightBarButtonItems>
                     </navigationItem>
