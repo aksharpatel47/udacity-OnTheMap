@@ -33,4 +33,13 @@ struct Constants {
   struct Colors {
     static let blue = UIColor(colorLiteralRed: 57 / 255.0, green: 112 / 255.0, blue: 147 / 255.0, alpha: 1.0)
   }
+  
+  struct ErrorMessages {
+    static let sorryTitle = "Sorry"
+    static let noInternetTitle = "No Internet"
+    static let noInternetMessage = "Please make sure you are connected to the Internet."
+    
+    static let logOutMessage = "Error while Logging Out. Please try again."
+    
+  }
 }

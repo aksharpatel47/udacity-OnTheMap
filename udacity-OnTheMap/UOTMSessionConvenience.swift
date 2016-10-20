@@ -72,8 +72,14 @@ extension UOTMClient {
       
       self.hideSystemNetworkIndicator()
       
-      guard let data = data, error == nil else {
+      guard let data = data, let statusCode = (response as? HTTPURLResponse)?.statusCode, error == nil else {
         completion(nil, error)
+        return
+      }
+      
+      guard statusCode >= 200, statusCode <= 299 else {
+        let userInfo = [NSLocalizedDescriptionKey: "Error while executing Delete request"]
+        completion(nil, NSError(domain: "taskForDeleteMethod", code: NSURLErrorBadServerResponse, userInfo: userInfo))
         return
       }
       
