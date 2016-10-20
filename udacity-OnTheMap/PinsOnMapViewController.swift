@@ -31,7 +31,7 @@ class PinsOnMapViewController: UIViewController {
       
       guard let studentLocations = studentLocations, error == nil else {
         
-        self.handleStudentLocationRequestError(error: error!)
+        handleStudentLocationRequestError(onViewController: self, error: error!)
         
         return
       }
@@ -79,7 +79,7 @@ class PinsOnMapViewController: UIViewController {
       
       guard let studentLocations = studentLocations, error == nil else {
         
-        self.handleStudentLocationRequestError(error: error!)
+        handleStudentLocationRequestError(onViewController: self, error: error!)
         
         return
       }
@@ -117,14 +117,14 @@ class PinsOnMapViewController: UIViewController {
       self.reloadButton.isEnabled = true
     }
   }
-  
-  func handleStudentLocationRequestError(error: Error) {
-    DispatchQueue.main.async {
-      if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
-        showBasicAlert(onController: self, withTitle: Constants.ErrorMessages.noInternetTitle, message: Constants.ErrorMessages.noInternetMessage, onOkPressed: nil)
-      } else {
-        showBasicAlert(onController: self, withTitle: Constants.ErrorMessages.sorryTitle, message: Constants.ErrorMessages.studentLocationsMessage, onOkPressed: nil)
-      }
+}
+
+func handleStudentLocationRequestError(onViewController viewCtrl: UIViewController, error: Error) {
+  DispatchQueue.main.async {
+    if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
+      showBasicAlert(onController: viewCtrl, withTitle: Constants.ErrorMessages.noInternetTitle, message: Constants.ErrorMessages.noInternetMessage, onOkPressed: nil)
+    } else {
+      showBasicAlert(onController: viewCtrl, withTitle: Constants.ErrorMessages.sorryTitle, message: Constants.ErrorMessages.studentLocationsMessage, onOkPressed: nil)
     }
   }
 }
