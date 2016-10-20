@@ -32,7 +32,10 @@ class EnterLocationViewController: UIViewController {
       placeMarks, error in
       
       guard let placeMarks = placeMarks, let placeMarkCoordinate = placeMarks.first?.location?.coordinate, error == nil else {
-        showBasicAlert(onController: self, withTitle: "Error", message: "Sorry! Could not find the location you entered. Please try a different One", onOkPressed: nil)
+        DispatchQueue.main.async {
+          showBasicAlert(onController: self, withTitle: "Error", message: "Sorry! Could not find the location you entered. Please try a different One", onOkPressed: nil)
+        }
+        
         self.updateUiAfterNetworkRequest()
         return
       }
