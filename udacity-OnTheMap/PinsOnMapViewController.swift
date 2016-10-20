@@ -31,7 +31,7 @@ class PinsOnMapViewController: UIViewController {
       
       guard let studentLocations = studentLocations, error == nil else {
         
-        handleStudentLocationRequestError(onViewController: self, error: error!)
+        handleStudentLocationsRequestError(onViewController: self, error: error!)
         
         return
       }
@@ -79,7 +79,7 @@ class PinsOnMapViewController: UIViewController {
       
       guard let studentLocations = studentLocations, error == nil else {
         
-        handleStudentLocationRequestError(onViewController: self, error: error!)
+        handleStudentLocationsRequestError(onViewController: self, error: error!)
         
         return
       }
@@ -119,7 +119,7 @@ class PinsOnMapViewController: UIViewController {
   }
 }
 
-func handleStudentLocationRequestError(onViewController viewCtrl: UIViewController, error: Error) {
+func handleStudentLocationsRequestError(onViewController viewCtrl: UIViewController, error: Error) {
   DispatchQueue.main.async {
     if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
       showBasicAlert(onController: viewCtrl, withTitle: Constants.ErrorMessages.noInternetTitle, message: Constants.ErrorMessages.noInternetMessage, onOkPressed: nil)
