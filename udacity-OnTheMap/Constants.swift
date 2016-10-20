@@ -40,6 +40,7 @@ struct Constants {
     static let noInternetMessage = "Please make sure you are connected to the Internet."
     
     static let logOutMessage = "Error while Logging Out. Please try again."
+    static let studentLocationsMessage = "Error while getting Student Locations. Please try again."
     
   }
 }

@@ -30,7 +30,9 @@ class PinsOnMapViewController: UIViewController {
       self.updateUiAfterNetworkRequest()
       
       guard let studentLocations = studentLocations, error == nil else {
-        //TODO: Handle Error
+        
+        self.handleStudentLocationRequestError(error: error!)
+        
         return
       }
       
@@ -76,7 +78,9 @@ class PinsOnMapViewController: UIViewController {
       self.updateUiAfterNetworkRequest()
       
       guard let studentLocations = studentLocations, error == nil else {
-        // TODO Handle error
+        
+        self.handleStudentLocationRequestError(error: error!)
+        
         return
       }
       
@@ -111,6 +115,16 @@ class PinsOnMapViewController: UIViewController {
       self.newPinButton.isEnabled = true
       self.logoutButton.isEnabled = true
       self.reloadButton.isEnabled = true
+    }
+  }
+  
+  func handleStudentLocationRequestError(error: Error) {
+    DispatchQueue.main.async {
+      if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
+        showBasicAlert(onController: self, withTitle: Constants.ErrorMessages.noInternetTitle, message: Constants.ErrorMessages.noInternetMessage, onOkPressed: nil)
+      } else {
+        showBasicAlert(onController: self, withTitle: Constants.ErrorMessages.sorryTitle, message: Constants.ErrorMessages.studentLocationsMessage, onOkPressed: nil)
+      }
     }
   }
 }
