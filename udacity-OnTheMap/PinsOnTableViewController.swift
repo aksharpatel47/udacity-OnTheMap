@@ -29,7 +29,9 @@ class PinsOnTableViewController: UIViewController {
       self.updateUiAfterNetworkRequest()
       
       guard let result = result, error == nil else {
-        //FIXME: Handle error here
+        
+        handleStudentLocationsRequestError(onViewController: self, error: error!)
+        
         return
       }
       
@@ -79,7 +81,9 @@ class PinsOnTableViewController: UIViewController {
       self.updateUiAfterNetworkRequest()
       
       guard let result = result, error == nil else {
-        //TODO: Handle error
+        
+        handleStudentLocationsRequestError(onViewController: self, error: error!)
+        
         return
       }
       
