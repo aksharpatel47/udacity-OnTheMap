@@ -433,7 +433,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9F84DAB82D3BCB97BD2B668 /* Pods-udacity-OnTheMap.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "${inherited}";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "udacity-OnTheMap/udacity-OnTheMap.entitlements";
 				DEVELOPMENT_TEAM = GAR9GU6C4G;
@@ -453,7 +453,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 978A0AEFD6BB445BD8D757A7 /* Pods-udacity-OnTheMap.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "${inherited}";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "udacity-OnTheMap/udacity-OnTheMap.entitlements";
 				DEVELOPMENT_TEAM = GAR9GU6C4G;
