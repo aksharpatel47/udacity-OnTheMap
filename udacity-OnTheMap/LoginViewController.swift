@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var facebookButton: UIButton!
+  @IBOutlet weak var loginButton: UIButton!
+  @IBOutlet weak var signupButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,8 +28,12 @@ class LoginViewController: UIViewController {
       return
     }
     
+    prepareUiForNetworkRequest()
+    
     UOTMClient.shared.loginUsingEmail(username: username, password: password, completion: {
       response, error in
+      
+      self.updateUiAfterNetworkRequest()
       
       if let error = error as? URLError {
         if error.errorCode == -1009 {
@@ -63,8 +69,12 @@ class LoginViewController: UIViewController {
         
         UserDefaults.standard.set(token.authenticationToken, forKey: Constants.OfflineDataKeys.facebookToken)
         
+        self.prepareUiForNetworkRequest()
+        
         UOTMClient.shared.loginUsingFacebook(token: token.authenticationToken, completion: {
           response, error in
+          
+          self.updateUiAfterNetworkRequest()
           
           guard error == nil else {
             return
@@ -80,6 +90,22 @@ class LoginViewController: UIViewController {
   
   func successfulLogin() {
     performSegue(withIdentifier: Constants.Segues.successfulLogin, sender: nil)
+  }
+  
+  func prepareUiForNetworkRequest() {
+    DispatchQueue.main.async {
+      self.loginButton.isEnabled = false
+      self.signupButton.isEnabled = false
+      self.facebookButton.isEnabled = false
+    }
+  }
+  
+  func updateUiAfterNetworkRequest() {
+    DispatchQueue.main.async {
+      self.loginButton.isEnabled = true
+      self.signupButton.isEnabled = true
+      self.facebookButton.isEnabled = true
+    }
   }
 }
 

@@ -65,6 +65,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.85076935279187815" green="0.27982587158538669" blue="0.11287098284795999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="loginViaEmail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F7X-i5-Yqn"/>
                                 </connections>
@@ -74,6 +77,12 @@
                                 <state key="normal" title="Don't have an Account? Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DCA-QL-rl1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T73-Hl-qOW">
                                 <color key="backgroundColor" red="0.069278946476399206" green="0.4457162822862295" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -82,6 +91,9 @@
                                 </constraints>
                                 <state key="normal" title="Login using Facebook">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.37173055669004379" green="0.63083478287887429" blue="0.92227157360406087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="loginViaFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HPU-ih-yDL"/>
@@ -121,7 +133,9 @@
                     <connections>
                         <outlet property="emailTextField" destination="z6u-f4-Um4" id="9YP-MD-U0g"/>
                         <outlet property="facebookButton" destination="T73-Hl-qOW" id="wed-m2-p3K"/>
+                        <outlet property="loginButton" destination="5DU-Sh-wGE" id="pwb-Fx-qKb"/>
                         <outlet property="passwordTextField" destination="zT9-Q3-Pke" id="izV-l6-n7t"/>
+                        <outlet property="signupButton" destination="fcZ-MT-xb0" id="HB9-Ke-Jiy"/>
                         <segue destination="ZD3-D8-lyt" kind="showDetail" identifier="successfulLogin" id="ds7-St-5bN"/>
                     </connections>
                 </viewController>
