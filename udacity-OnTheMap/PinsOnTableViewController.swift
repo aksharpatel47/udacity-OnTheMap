@@ -61,3 +61,12 @@ extension PinsOnTableViewController: UITableViewDataSource {
     return cell
   }
 }
+
+extension PinsOnTableViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    if let url = URL(string: studentLocations[indexPath.row].mediaUrl) {
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+  }
+}

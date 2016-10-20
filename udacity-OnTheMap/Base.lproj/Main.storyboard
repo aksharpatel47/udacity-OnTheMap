@@ -144,11 +144,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="voI-yg-nI0">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pins" textLabel="Yk1-Yk-ukh" detailTextLabel="M56-rK-LhF" imageView="C3x-Zo-Trv" style="IBUITableViewCellStyleSubtitle" id="d3b-XZ-JUN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pins" textLabel="Yk1-Yk-ukh" detailTextLabel="M56-rK-LhF" imageView="C3x-Zo-Trv" style="IBUITableViewCellStyleSubtitle" id="d3b-XZ-JUN">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d3b-XZ-JUN" id="ZIz-DX-Ydv">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yk1-Yk-ukh">
@@ -422,7 +422,7 @@ today?</string>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="refresh" id="hI6-ZD-IaJ">
                                 <connections>
-                                    <action selector="reloadStudentLocations:" destination="1lL-TF-Laq" id="RdK-Z9-qS1"/>
+                                    <action selector="reloadStudentLocations:" destination="1lL-TF-Laq" id="ax7-6w-iHz"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="pin" id="nAu-yd-jww"/>
@@ -502,6 +502,6 @@ today?</string>
         <image name="udacity" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HHT-KR-zWf"/>
+        <segue reference="xU9-7N-umn"/>
     </inferredMetricsTieBreakers>
 </document>
