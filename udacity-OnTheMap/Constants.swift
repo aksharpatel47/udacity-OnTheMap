@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
   struct Segues {
@@ -27,5 +28,9 @@ struct Constants {
   
   struct PinIdentifiers {
     static let mapPin = "mapPin"
+  }
+  
+  struct Colors {
+    static let blue = UIColor(colorLiteralRed: 57 / 255.0, green: 112 / 255.0, blue: 147 / 255.0, alpha: 1.0)
   }
 }

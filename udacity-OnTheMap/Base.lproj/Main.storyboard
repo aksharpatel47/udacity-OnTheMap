@@ -273,7 +273,7 @@ today?</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                         <state key="normal" title="Find on the Map">
-                                            <color key="titleColor" red="0.20720512360000001" green="0.44035898229999998" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.20784313725490194" green="0.44035898229999998" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="findLocationOnMap:" destination="y0G-KL-Xrd" eventType="touchUpInside" id="8jf-i6-pUN"/>
@@ -319,6 +319,8 @@ today?</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="QrE-54-ebN" id="m9J-h6-ixq"/>
+                        <outlet property="findOnMapButton" destination="NcT-IE-rlY" id="qvV-OP-she"/>
                         <outlet property="locationTextView" destination="adX-ba-t3P" id="hiZ-Ro-pdX"/>
                         <segue destination="The-lz-gQv" kind="show" identifier="goToEnterLink" id="y5L-Bi-xFW"/>
                     </connections>
@@ -524,7 +526,7 @@ today?</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DJs-tq-qbo" customClass="PostInfoNavigationController" customModule="udacity_OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hay-xr-Mvi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hay-xr-Mvi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
