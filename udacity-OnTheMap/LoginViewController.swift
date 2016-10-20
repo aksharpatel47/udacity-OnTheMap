@@ -35,23 +35,20 @@ class LoginViewController: UIViewController {
       
       self.updateUiAfterNetworkRequest()
       
-      if let error = error as? URLError {
-        if error.errorCode == -1009 {
-        
-          showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need internet connection to log in.", onOkPressed: nil)
-        } else {
-          print("Your error code is ", error.errorCode)
-        }
-      }
-      
       guard error == nil else {
+        
+        if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
+          showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need internet connection to Sign In. Please make sure you are connected.", onOkPressed: nil)
+        } else {
+          showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while Signing In. Please try again.", onOkPressed: nil)
+        }
+        
         return
       }
       
       DispatchQueue.main.async {
         self.successfulLogin()
       }
-      
     })
   }
   
@@ -61,7 +58,8 @@ class LoginViewController: UIViewController {
       loginResult in
       switch loginResult {
       case .failed(let error):
-        print(error)
+        print(error);
+        showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while Signing In using Facebook. Please try again.", onOkPressed: nil)
       case .cancelled:
         print("Cancelled")
       case .success(let grantedPermissions, let declinedPermissions, let token):
@@ -77,6 +75,13 @@ class LoginViewController: UIViewController {
           self.updateUiAfterNetworkRequest()
           
           guard error == nil else {
+            
+            if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
+              showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need Internet connection to Sign In. Please make sure you are connected to the Internet.", onOkPressed: nil)
+            } else {
+              showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while Signing In using Facebook. Please try again.", onOkPressed: nil)
+            }
+            
             return
           }
           

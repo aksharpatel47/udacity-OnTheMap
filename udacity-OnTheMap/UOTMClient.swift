@@ -23,6 +23,8 @@ class UOTMClient {
   func taskForGetMethod(method: String, queryParameters: [String:Any]?, headers: [String:Any]?, extractSubdata: Bool, completionForGet: @escaping (_ response: Any?, _ error: Error?) -> Void) -> URLSessionTask? {
     
     guard let url = createUrl(forMethodName: method, withQueryParamters: queryParameters) else {
+      let userInfo = [NSLocalizedDescriptionKey: "Error while creating url from \(method)"]
+      completionForGet(nil, NSError(domain: "taskForGetMethod", code: NSURLErrorBadURL, userInfo: userInfo))
       return nil
     }
     
@@ -41,13 +43,20 @@ class UOTMClient {
       
       self.hideSystemNetworkIndicator()
       
-      guard let data = data, error == nil else {
+      guard let data = data, let statusCode = (response as? HTTPURLResponse)?.statusCode, error == nil else {
         completionForGet(nil, error)
         return
       }
       
+      guard statusCode >= 200, statusCode <= 299 else {
+        let userInfo = [NSLocalizedDescriptionKey: "Error while making GET Request"]
+        completionForGet(nil, NSError(domain: "taskForGetMethod", code: NSURLErrorBadServerResponse, userInfo: userInfo))
+        return
+      }
+      
       guard let newData = self.deserializeToJson(from: data, extractSubdata: extractSubdata) else {
-        //FIXME: Add error handler here.
+        let userInfo = [NSLocalizedDescriptionKey: "Error while deserializing data to JSON."]
+        completionForGet(nil, NSError(domain: "taskForGetMethod", code: NSURLErrorCannotDecodeRawData, userInfo: userInfo))
         return
       }
       
@@ -62,6 +71,8 @@ class UOTMClient {
   func taskForPostMethod(method: String, queryParameters: [String:String]?, headers: [String:Any]?, body: Any?, extractSubdata: Bool, completionForPost: @escaping (_ response: Any?, _ error: Error?) -> Void) -> URLSessionTask? {
     
     guard let url = createUrl(forMethodName: method, withQueryParamters: queryParameters) else {
+      let userInfo = [NSLocalizedDescriptionKey: "Error while creating url from \(method)"]
+      completionForPost(nil, NSError(domain: "taskForPostMethod", code: NSURLErrorBadURL, userInfo: userInfo))
       return nil
     }
     
@@ -87,13 +98,24 @@ class UOTMClient {
       
       self.hideSystemNetworkIndicator()
       
-      guard let data = data, let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode == 200, error == nil else {
-        print(error?.localizedDescription)
+      guard let data = data, let statusCode = (response as? HTTPURLResponse)?.statusCode, error == nil else {
         completionForPost(nil, error)
         return
       }
       
-      completionForPost(self.deserializeToJson(from: data, extractSubdata: extractSubdata), error)
+      guard statusCode >= 200, statusCode <= 299 else {
+        let userInfo = [NSLocalizedDescriptionKey: "Error while making POST request"]
+        completionForPost(nil, NSError(domain: "taskForPostMethod", code: NSURLErrorBadServerResponse, userInfo: userInfo))
+        return
+      }
+      
+      guard let result = self.deserializeToJson(from: data, extractSubdata: extractSubdata) else {
+        let userInfo = [NSLocalizedDescriptionKey: "Error while deserializing data to JSON."]
+        completionForPost(nil, NSError(domain: "taskForPostMethod", code: NSURLErrorCannotDecodeRawData, userInfo: userInfo))
+        return
+      }
+      
+      completionForPost(result, nil)
     })
     
     task.resume()

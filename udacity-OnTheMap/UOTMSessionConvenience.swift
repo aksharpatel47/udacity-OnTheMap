@@ -44,7 +44,7 @@ extension UOTMClient {
   func deleteSession(completion: @escaping (_ response: Any?, _ error: Error?) -> Void) {
     guard let url = createUrl(forMethodName: Methods.session, withQueryParamters: nil) else {
       let userInfo = [NSLocalizedDescriptionKey: "Could not generate url for the Delete request."]
-      completion(nil, NSError(domain: "taskForDeleteMethod", code: 0, userInfo: userInfo))
+      completion(nil, NSError(domain: "taskForDeleteMethod", code: NSURLErrorBadURL, userInfo: userInfo))
       return
     }
     
@@ -79,7 +79,7 @@ extension UOTMClient {
       
       guard let newData = self.deserializeToJson(from: data, extractSubdata: true) else {
         let userInfo = [NSLocalizedDescriptionKey: "Error while parsing response data from Delete request"]
-        completion(nil, NSError(domain: "taskForDeleteMethod", code: 0, userInfo: userInfo))
+        completion(nil, NSError(domain: "taskForDeleteMethod", code: NSURLErrorCannotDecodeRawData, userInfo: userInfo))
         return
       }
       
