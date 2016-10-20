@@ -13,6 +13,7 @@ class StudentLocationPin: NSObject, MKAnnotation {
   var title: String?
   var subtitle: String?
   var coordinate: CLLocationCoordinate2D
+  var mapString: String?
   
   init(coordinate: CLLocationCoordinate2D) {
     self.coordinate = coordinate

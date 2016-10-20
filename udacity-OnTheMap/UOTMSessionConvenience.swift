@@ -18,7 +18,7 @@ extension UOTMClient {
       ]
     ]
     
-    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, body: body, extractSubdata: true, completionForPost: {
+    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, headers: nil, body: body, extractSubdata: true, completionForPost: {
       response, error in
       
       self.saveSessionToken(from: response)
@@ -33,7 +33,7 @@ extension UOTMClient {
       ]
     ]
     
-    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, body: body, extractSubdata: true, completionForPost: {
+    let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, headers: nil, body: body, extractSubdata: true, completionForPost: {
       response, error in
       
       self.saveSessionToken(from: response)
@@ -86,6 +86,7 @@ extension UOTMClient {
       self.studentLocations = []
       UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.sessionId)
       UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.expiration)
+      UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.udacityAccountId)
       
       if let _ = UserDefaults.standard.object(forKey: Constants.OfflineDataKeys.facebookToken) {
         let loginManager = LoginManager()
@@ -101,6 +102,8 @@ extension UOTMClient {
   
   func saveSessionToken(from response: Any?) {
     guard let response = response as? [String:Any],
+      let account = response[ResponseParameterKeys.account] as? [String:Any],
+      let key = account[ResponseParameterKeys.accountKey] as? String,
       let session = response[ResponseParameterKeys.session] as? [String:String],
       let id = session[ResponseParameterKeys.id],
       let expiration = session[ResponseParameterKeys.expiration] else {
@@ -109,5 +112,6 @@ extension UOTMClient {
     
     UserDefaults.standard.set(id, forKey: Constants.OfflineDataKeys.sessionId)
     UserDefaults.standard.set(expiration, forKey: Constants.OfflineDataKeys.expiration)
+    UserDefaults.standard.set(key, forKey: Constants.OfflineDataKeys.udacityAccountId)
   }
 }

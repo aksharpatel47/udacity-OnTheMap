@@ -12,8 +12,13 @@ import UIKit
 class UOTMClient {
   
   var shared = URLSession.shared
-  
+
   var studentLocations = [StudentLocation]()
+  
+  var studentLocationRequestHeaders = [
+    "X-Parse-Application-Id": "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr",
+    "X-Parse-REST-API-Key": "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
+  ]
   
   func taskForGetMethod(method: String, queryParameters: [String:Any]?, headers: [String:Any]?, extractSubdata: Bool, completionForGet: @escaping (_ response: Any?, _ error: Error?) -> Void) -> URLSessionTask? {
     
@@ -54,7 +59,7 @@ class UOTMClient {
     return task
   }
   
-  func taskForPostMethod(method: String, queryParameters: [String:String]?, body: Any?, extractSubdata: Bool, completionForPost: @escaping (_ response: Any?, _ error: Error?) -> Void) -> URLSessionTask? {
+  func taskForPostMethod(method: String, queryParameters: [String:String]?, headers: [String:Any]?, body: Any?, extractSubdata: Bool, completionForPost: @escaping (_ response: Any?, _ error: Error?) -> Void) -> URLSessionTask? {
     
     guard let url = createUrl(forMethodName: method, withQueryParamters: queryParameters) else {
       return nil
@@ -67,6 +72,12 @@ class UOTMClient {
     
     if let body = body {
       request.httpBody = try? JSONSerialization.data(withJSONObject: body)
+    }
+    
+    if let headers = headers {
+      for (key, value) in headers {
+        request.addValue("\(value)", forHTTPHeaderField: key)
+      }
     }
     
     showSystemNetworkIndicator()

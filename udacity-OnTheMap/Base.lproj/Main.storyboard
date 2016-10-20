@@ -201,7 +201,7 @@
                             </barButtonItem>
                             <barButtonItem image="pin" id="lyj-XA-O91">
                                 <connections>
-                                    <segue destination="y0G-KL-Xrd" kind="presentation" id="QYK-0h-SAF"/>
+                                    <segue destination="DJs-tq-qbo" kind="presentation" id="QYK-0h-SAF"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -228,14 +228,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sr8-td-bbd">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3F-nv-pYK">
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="0.20720512360000001" green="0.44035898229999998" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelPostingNewPin:" destination="y0G-KL-Xrd" eventType="touchUpInside" id="fLJ-Tg-QgV"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JL7-aQ-Kol">
                                         <attributedString key="attributedText">
                                             <fragment>
@@ -269,9 +261,7 @@ today?</string>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="JL7-aQ-Kol" secondAttribute="bottom" constant="24" id="R3B-HW-hrH"/>
-                                    <constraint firstItem="n3F-nv-pYK" firstAttribute="top" secondItem="sr8-td-bbd" secondAttribute="top" constant="25" id="RG0-sa-GOx"/>
-                                    <constraint firstAttribute="trailing" secondItem="n3F-nv-pYK" secondAttribute="trailing" constant="8" id="TvO-Su-wlG"/>
+                                    <constraint firstAttribute="bottom" secondItem="JL7-aQ-Kol" secondAttribute="bottom" constant="16" id="R3B-HW-hrH"/>
                                     <constraint firstItem="JL7-aQ-Kol" firstAttribute="centerX" secondItem="sr8-td-bbd" secondAttribute="centerX" id="u8P-mN-1LD"/>
                                     <constraint firstAttribute="height" constant="200" id="xFO-Qf-3j0"/>
                                 </constraints>
@@ -297,7 +287,7 @@ today?</string>
                                     <constraint firstItem="NcT-IE-rlY" firstAttribute="centerY" secondItem="fw6-N0-YWs" secondAttribute="centerY" id="dN4-Vs-lxm"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Enter Your Location Here..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="adX-ba-t3P">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Ahmedabad, Gujarat, India" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="adX-ba-t3P">
                                 <color key="backgroundColor" red="0.20720512361330629" green="0.44035898227732728" blue="0.57499289512634277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -322,7 +312,11 @@ today?</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8lg-NT-iaq">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="QrE-54-ebN"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="QrE-54-ebN">
+                            <connections>
+                                <action selector="cancelPostingNewPin:" destination="y0G-KL-Xrd" id="IBQ-xR-ERk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="locationTextView" destination="adX-ba-t3P" id="hiZ-Ro-pdX"/>
@@ -331,7 +325,7 @@ today?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ljv-2Y-owy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4069.5999999999999" y="76.911544227886068"/>
+            <point key="canvasLocation" x="5008.8000000000002" y="76.911544227886068"/>
         </scene>
         <!--Enter Link View Controller-->
         <scene sceneID="hHW-oD-77c">
@@ -347,26 +341,19 @@ today?</string>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofr-Ql-QCh">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBN-C8-oxY">
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="http://your.link" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KWP-Ph-xzq">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://twitter.com/aksharpatel47" placeholder="Enter Your Link Here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fw-iE-Xnt">
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.40301262840000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20605835319999999" green="0.43962222340000001" blue="0.57620441909999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="FBN-C8-oxY" firstAttribute="top" secondItem="ofr-Ql-QCh" secondAttribute="top" constant="25" id="1Ky-S9-ydd"/>
-                                    <constraint firstAttribute="height" constant="200" id="9C0-MF-ZoE"/>
-                                    <constraint firstAttribute="bottom" secondItem="KWP-Ph-xzq" secondAttribute="bottom" constant="16" id="PdY-hJ-7tf"/>
-                                    <constraint firstAttribute="trailing" secondItem="KWP-Ph-xzq" secondAttribute="trailing" constant="68" id="flh-an-ZAM"/>
-                                    <constraint firstAttribute="trailing" secondItem="FBN-C8-oxY" secondAttribute="trailing" constant="8" id="gQT-kb-ghS"/>
-                                    <constraint firstItem="KWP-Ph-xzq" firstAttribute="top" secondItem="ofr-Ql-QCh" secondAttribute="top" constant="54" id="sEV-4W-9gu"/>
-                                    <constraint firstItem="KWP-Ph-xzq" firstAttribute="leading" secondItem="ofr-Ql-QCh" secondAttribute="leading" constant="68" id="uM2-0G-1Vu"/>
+                                    <constraint firstItem="0fw-iE-Xnt" firstAttribute="leading" secondItem="ofr-Ql-QCh" secondAttribute="leading" constant="8" id="FI2-Xm-yfr"/>
+                                    <constraint firstAttribute="height" constant="120" id="TUu-9F-qWW"/>
+                                    <constraint firstAttribute="trailing" secondItem="0fw-iE-Xnt" secondAttribute="trailing" constant="8" id="kON-Ra-bbn"/>
+                                    <constraint firstAttribute="bottom" secondItem="0fw-iE-Xnt" secondAttribute="bottom" constant="6" id="xDo-Wz-WOW"/>
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rhG-QR-mEg"/>
@@ -379,6 +366,9 @@ today?</string>
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" red="0.20720512360000001" green="0.44035898229999998" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="postNewPin:" destination="The-lz-gQv" eventType="touchUpInside" id="yVp-0q-wV7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
@@ -396,6 +386,7 @@ today?</string>
                             <constraint firstAttribute="trailing" secondItem="ofr-Ql-QCh" secondAttribute="trailing" id="Mqx-NT-6Ki"/>
                             <constraint firstAttribute="trailing" secondItem="rhG-QR-mEg" secondAttribute="trailing" id="RkY-VB-h3F"/>
                             <constraint firstItem="LP6-dM-1Rd" firstAttribute="leading" secondItem="ynQ-BQ-IpD" secondAttribute="leading" id="XrP-ll-e5f"/>
+                            <constraint firstItem="0fw-iE-Xnt" firstAttribute="top" secondItem="SmM-j6-6Sc" secondAttribute="bottom" constant="5" id="aCA-vZ-ceQ"/>
                             <constraint firstItem="rhG-QR-mEg" firstAttribute="top" secondItem="ofr-Ql-QCh" secondAttribute="bottom" id="iMh-2i-30S"/>
                             <constraint firstAttribute="trailing" secondItem="LP6-dM-1Rd" secondAttribute="trailing" id="is0-hm-no4"/>
                             <constraint firstItem="zSl-5t-Xws" firstAttribute="top" secondItem="LP6-dM-1Rd" secondAttribute="bottom" id="nYQ-bF-3ld"/>
@@ -403,10 +394,21 @@ today?</string>
                             <constraint firstItem="ofr-Ql-QCh" firstAttribute="leading" secondItem="ynQ-BQ-IpD" secondAttribute="leading" id="zXg-4Z-zey"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Owf-3m-Yr9">
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="8kb-9F-DaU">
+                            <connections>
+                                <action selector="cancelPostingNewPin:" destination="The-lz-gQv" id="C8p-EL-eK9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="rhG-QR-mEg" id="2N3-gC-uS0"/>
+                        <outlet property="urlTextField" destination="0fw-iE-Xnt" id="LAO-g4-teo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbd-28-lgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4912.8000000000002" y="76.911544227886068"/>
+            <point key="canvasLocation" x="5852" y="76.911544227886068"/>
         </scene>
         <!--On The Map-->
         <scene sceneID="jc0-CS-ETE">
@@ -448,7 +450,7 @@ today?</string>
                             </barButtonItem>
                             <barButtonItem image="pin" id="nAu-yd-jww">
                                 <connections>
-                                    <segue destination="y0G-KL-Xrd" kind="presentation" id="JrG-aI-abO"/>
+                                    <segue destination="DJs-tq-qbo" kind="presentation" id="JrG-aI-abO"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -516,6 +518,25 @@ today?</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHC-Ni-HlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1944.8" y="449.32533733133437"/>
+        </scene>
+        <!--Post Info Navigation Controller-->
+        <scene sceneID="aje-hY-MSA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DJs-tq-qbo" customClass="PostInfoNavigationController" customModule="udacity_OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hay-xr-Mvi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="y0G-KL-Xrd" kind="relationship" relationship="rootViewController" id="PRJ-LH-6tc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zKd-W7-nmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4069.5999999999999" y="76.911544227886068"/>
         </scene>
     </scenes>
     <resources>

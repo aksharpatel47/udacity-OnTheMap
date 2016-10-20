@@ -13,12 +13,7 @@ extension UOTMClient {
   func getStudentLocationsFromServer(completion: @escaping(_ locations: [StudentLocation]?, _ error: Error?) -> Void) {
     let queryParams: [String:Any] = ["limit": 100, "order": "-updatedAt"]
     
-    let headers = [
-      "X-Parse-Application-Id": "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr",
-      "X-Parse-REST-API-Key": "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
-    ]
-    
-    let _ = taskForGetMethod(method: Methods.studentLocation, queryParameters: queryParams, headers: headers, extractSubdata: false, completionForGet: {
+    let _ = taskForGetMethod(method: Methods.studentLocation, queryParameters: queryParams, headers: studentLocationRequestHeaders, extractSubdata: false, completionForGet: {
       response, error in
       
       guard let response = response as? [String:Any], error == nil else {
@@ -47,14 +42,33 @@ extension UOTMClient {
   }
   
   func getStudentLocation(uniqueKey: String) {
-    
+    //TODO: Implement get student location
   }
   
-  func postStudentLocation() {
+  func postStudentLocation(studentLocationPin: StudentLocationPin, completion: @escaping (_ error: Error?) -> Void) {
+    let body = [
+      BodyKeys.uniqueKey: UserDefaults.standard.object(forKey: Constants.OfflineDataKeys.udacityAccountId)!,
+      BodyKeys.firstName: "Akshar",
+      BodyKeys.lastName: "Patel",
+      BodyKeys.mapString: studentLocationPin.mapString!,
+      BodyKeys.mediaUrl: studentLocationPin.subtitle!,
+      BodyKeys.latitude: studentLocationPin.coordinate.latitude,
+      BodyKeys.longitude: studentLocationPin.coordinate.longitude
+    ]
     
+    let _ = taskForPostMethod(method: Methods.studentLocation, queryParameters: nil, headers: studentLocationRequestHeaders, body: body, extractSubdata: false, completionForPost: {
+      result, error in
+      
+      guard let _ = result, error == nil else {
+        completion(error)
+        return
+      }
+      
+      completion(nil)
+    })
   }
   
   func updateStudentLocation() {
-    
+    //TODO: update student location
   }
 }

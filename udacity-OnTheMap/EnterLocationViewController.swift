@@ -16,7 +16,7 @@ class EnterLocationViewController: UIViewController {
   
   let textViewPlaceholder = "Enter Your Location Here..."
   
-  @IBAction func cancelPostingNewPin(_ sender: UIButton) {
+  @IBAction func cancelPostingNewPin(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
   }
   
@@ -32,6 +32,7 @@ class EnterLocationViewController: UIViewController {
       }
       
       let studentLocationPin = StudentLocationPin(coordinate: placeMarkCoordinate)
+      studentLocationPin.mapString = locationText
       self.performSegue(withIdentifier: Constants.Segues.goToEnterLink, sender: studentLocationPin)
     })
   }

@@ -17,6 +17,7 @@ struct Constants {
   struct OfflineDataKeys {
     static let sessionId = "sessionId"
     static let expiration = "sessionExpirationDate"
+    static let udacityAccountId = "udacityAccountId"
     static let facebookToken = "facebookToken"
   }
   
