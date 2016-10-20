@@ -83,6 +83,7 @@ extension UOTMClient {
         return
       }
       
+      self.studentLocations = []
       UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.sessionId)
       UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.expiration)
       
