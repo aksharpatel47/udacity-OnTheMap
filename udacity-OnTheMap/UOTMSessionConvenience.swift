@@ -64,8 +64,12 @@ extension UOTMClient {
       request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
     }
     
+    showSystemNetworkIndicator()
+    
     let task = URLSession.shared.dataTask(with: request, completionHandler: {
       data, response, error in
+      
+      self.hideSystemNetworkIndicator()
       
       guard let data = data, error == nil else {
         completion(nil, error)

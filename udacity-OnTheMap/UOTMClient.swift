@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class UOTMClient {
   
@@ -28,8 +29,12 @@ class UOTMClient {
       }
     }
     
+    showSystemNetworkIndicator()
+    
     let task = shared.dataTask(with: request, completionHandler: {
       data, response, error in
+      
+      self.hideSystemNetworkIndicator()
       
       guard let data = data, error == nil else {
         completionForGet(nil, error)
@@ -64,8 +69,12 @@ class UOTMClient {
       request.httpBody = try? JSONSerialization.data(withJSONObject: body)
     }
     
+    showSystemNetworkIndicator()
+    
     let task = URLSession.shared.dataTask(with: request, completionHandler: {
       data, response, error in
+      
+      self.hideSystemNetworkIndicator()
       
       guard let data = data, let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode == 200, error == nil else {
         print(error?.localizedDescription)
@@ -106,6 +115,18 @@ class UOTMClient {
     }
     
     return url
+  }
+  
+  func showSystemNetworkIndicator() {
+    DispatchQueue.main.async {
+      UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+  }
+  
+  func hideSystemNetworkIndicator() {
+    DispatchQueue.main.async {
+      UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
   }
   
 //  func taskForPutMethod() -> URLSessionTask {
