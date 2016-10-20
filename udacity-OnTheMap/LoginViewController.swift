@@ -61,6 +61,8 @@ class LoginViewController: UIViewController {
       case .success(let grantedPermissions, let declinedPermissions, let token):
         print(grantedPermissions, declinedPermissions, token)
         
+        UserDefaults.standard.set(token.authenticationToken, forKey: Constants.OfflineDataKeys.facebookToken)
+        
         UOTMClient.shared.loginUsingFacebook(token: token.authenticationToken, completion: {
           response, error in
           
