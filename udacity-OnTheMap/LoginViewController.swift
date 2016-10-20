@@ -37,10 +37,12 @@ class LoginViewController: UIViewController {
       
       guard error == nil else {
         
-        if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
-          showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need internet connection to Sign In. Please make sure you are connected.", onOkPressed: nil)
-        } else {
-          showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while Signing In. Please try again.", onOkPressed: nil)
+        DispatchQueue.main.async {
+          if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
+            showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need internet connection to Sign In. Please make sure you are connected.", onOkPressed: nil)
+          } else {
+            showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while Signing In. Please try again.", onOkPressed: nil)
+          }
         }
         
         return
@@ -58,7 +60,7 @@ class LoginViewController: UIViewController {
       loginResult in
       switch loginResult {
       case .failed(let error):
-        print(error);
+        print(error)
         showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while Signing In using Facebook. Please try again.", onOkPressed: nil)
       case .cancelled:
         print("Cancelled")
@@ -76,10 +78,12 @@ class LoginViewController: UIViewController {
           
           guard error == nil else {
             
-            if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
-              showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need Internet connection to Sign In. Please make sure you are connected to the Internet.", onOkPressed: nil)
-            } else {
-              showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while Signing In using Facebook. Please try again.", onOkPressed: nil)
+            DispatchQueue.main.async {
+              if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
+                showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need Internet connection to Sign In. Please make sure you are connected to the Internet.", onOkPressed: nil)
+              } else {
+                showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while Signing In using Facebook. Please try again.", onOkPressed: nil)
+              }
             }
             
             return
