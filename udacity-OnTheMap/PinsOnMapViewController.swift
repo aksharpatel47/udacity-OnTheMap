@@ -15,12 +15,19 @@ class PinsOnMapViewController: UIViewController {
   var studentLocationPins = [StudentLocationPin]()
   
   @IBOutlet weak var mapView: MKMapView!
+  @IBOutlet weak var reloadButton: UIBarButtonItem!
+  @IBOutlet weak var logoutButton: UIBarButtonItem!
+  @IBOutlet weak var newPinButton: UIBarButtonItem!
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+    prepareUiForNetworkRequest()
+    
     UOTMClient.shared.getStudentLocations(completion: {
       studentLocations, error in
+      
+      self.updateUiAfterNetworkRequest()
       
       guard let studentLocations = studentLocations, error == nil else {
         //TODO: Handle Error
@@ -47,8 +54,13 @@ class PinsOnMapViewController: UIViewController {
   }
   
   @IBAction func reloadStudentLocations(_ sender: UIBarButtonItem) {
+    
+    prepareUiForNetworkRequest()
+    
     UOTMClient.shared.getStudentLocationsFromServer(completion: {
       studentLocations, error in
+      
+      self.updateUiAfterNetworkRequest()
       
       guard let studentLocations = studentLocations, error == nil else {
         // TODO Handle error
@@ -70,6 +82,22 @@ class PinsOnMapViewController: UIViewController {
     DispatchQueue.main.async {
       self.mapView.removeAnnotations(self.mapView.annotations)
       self.mapView.addAnnotations(self.studentLocationPins)
+    }
+  }
+  
+  func prepareUiForNetworkRequest() {
+    DispatchQueue.main.async {
+      self.newPinButton.isEnabled = false
+      self.logoutButton.isEnabled = false
+      self.reloadButton.isEnabled = false
+    }
+  }
+  
+  func updateUiAfterNetworkRequest() {
+    DispatchQueue.main.async {
+      self.newPinButton.isEnabled = true
+      self.logoutButton.isEnabled = true
+      self.reloadButton.isEnabled = true
     }
   }
 }

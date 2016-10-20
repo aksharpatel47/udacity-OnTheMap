@@ -14,12 +14,19 @@ class PinsOnTableViewController: UIViewController {
   var studentLocations = [StudentLocation]()
   
   @IBOutlet weak var studentLocationsTableView: UITableView!
+  @IBOutlet weak var reloadButton: UIBarButtonItem!
+  @IBOutlet weak var newPinButton: UIBarButtonItem!
+  @IBOutlet weak var logoutButton: UIBarButtonItem!
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+    prepareUiForNetworkRequest()
+    
     UOTMClient.shared.getStudentLocations(completion: {
       result, error in
+      
+      self.updateUiAfterNetworkRequest()
       
       guard let result = result, error == nil else {
         //FIXME: Handle error here
@@ -49,8 +56,13 @@ class PinsOnTableViewController: UIViewController {
   }
   
   @IBAction func reloadStudentLocations(_ sender: UIBarButtonItem) {
+    
+    prepareUiForNetworkRequest()
+    
     UOTMClient.shared.getStudentLocationsFromServer(completion: {
       result, error in
+      
+      self.updateUiAfterNetworkRequest()
       
       guard let result = result, error == nil else {
         //TODO: Handle error
@@ -63,6 +75,22 @@ class PinsOnTableViewController: UIViewController {
         self.studentLocationsTableView.reloadData()
       }
     })
+  }
+  
+  func prepareUiForNetworkRequest() {
+    DispatchQueue.main.async {
+      self.newPinButton.isEnabled = false
+      self.logoutButton.isEnabled = false
+      self.reloadButton.isEnabled = false
+    }
+  }
+  
+  func updateUiAfterNetworkRequest() {
+    DispatchQueue.main.async {
+      self.newPinButton.isEnabled = true
+      self.logoutButton.isEnabled = true
+      self.reloadButton.isEnabled = true
+    }
   }
 }
 

@@ -207,6 +207,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="logoutButton" destination="tn2-6V-mfC" id="J2H-RP-jdG"/>
+                        <outlet property="newPinButton" destination="lyj-XA-O91" id="lp5-fp-CDb"/>
+                        <outlet property="reloadButton" destination="cod-Gg-Qin" id="tD9-wV-sls"/>
                         <outlet property="studentLocationsTableView" destination="voI-yg-nI0" id="wxU-H1-RjR"/>
                     </connections>
                 </viewController>
@@ -463,7 +466,10 @@ today?</string>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="logoutButton" destination="L4J-jI-c1F" id="cPi-aB-l1c"/>
                         <outlet property="mapView" destination="jla-dY-pl4" id="CZH-Cl-kQt"/>
+                        <outlet property="newPinButton" destination="nAu-yd-jww" id="exb-vX-aM6"/>
+                        <outlet property="reloadButton" destination="hI6-ZD-IaJ" id="aaR-al-VZM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1U-6o-9Fc" userLabel="First Responder" sceneMemberID="firstResponder"/>
