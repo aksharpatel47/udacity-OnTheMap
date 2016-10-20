@@ -47,3 +47,10 @@ class EnterLinkViewController: UIViewController {
     dismiss(animated: true, completion: nil)
   }
 }
+
+extension EnterLinkViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
+}
