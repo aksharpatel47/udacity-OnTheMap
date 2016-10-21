@@ -37,6 +37,10 @@ struct StudentLocation {
     uniqueKey = dictionary[UOTMClient.ResponseParameterKeys.uniqueKey] as! String
     updatedAt = dictionary[UOTMClient.ResponseParameterKeys.updatedAt] as! String
     createdAt = dictionary[UOTMClient.ResponseParameterKeys.createdAt] as! String
+    
+    if !mediaUrl.hasPrefix("http://") && !mediaUrl.hasPrefix("https://") && !mediaUrl.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty {
+      mediaUrl = "http://" + mediaUrl
+    }
   }
   
   static func parseStudentLocationsFromResults(result: [[String:Any]]) -> [StudentLocation] {
