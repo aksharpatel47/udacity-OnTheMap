@@ -159,7 +159,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pins" textLabel="Yk1-Yk-ukh" detailTextLabel="M56-rK-LhF" imageView="C3x-Zo-Trv" style="IBUITableViewCellStyleSubtitle" id="d3b-XZ-JUN">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d3b-XZ-JUN" id="ZIz-DX-Ydv">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -304,7 +304,7 @@ today?</string>
                                     <constraint firstItem="NcT-IE-rlY" firstAttribute="centerY" secondItem="fw6-N0-YWs" secondAttribute="centerY" id="dN4-Vs-lxm"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Ahmedabad, Gujarat, India" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="adX-ba-t3P">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Enter Your Location Here..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="adX-ba-t3P">
                                 <color key="backgroundColor" red="0.20720512361330629" green="0.44035898227732728" blue="0.57499289512634277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -360,7 +360,7 @@ today?</string>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofr-Ql-QCh">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://twitter.com/aksharpatel47" placeholder="Enter Your Link Here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fw-iE-Xnt">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Link Here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fw-iE-Xnt">
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.40301262840000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
