@@ -24,8 +24,10 @@ class LoginViewController: UIViewController {
   }
   
   @IBAction func loginViaEmail(_ sender: UIButton) {
-    guard let username = emailTextField.text, let password = passwordTextField.text else {
-      return
+    guard let username = emailTextField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines),
+      let password = passwordTextField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines), !username.isEmpty, !password.isEmpty else {
+        showBasicAlert(onController: self, withTitle: "Login", message: "Please enter both Username and Password.", onOkPressed: nil)
+        return
     }
     
     prepareUiForNetworkRequest()
@@ -39,9 +41,9 @@ class LoginViewController: UIViewController {
         
         DispatchQueue.main.async {
           if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
-            showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need internet connection to Sign In. Please make sure you are connected.", onOkPressed: nil)
+            showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need internet connection to Log In. Please make sure you are connected.", onOkPressed: nil)
           } else {
-            showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while Signing In. Please try again.", onOkPressed: nil)
+            showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while trying to Log In. Please check your Username and Password.", onOkPressed: nil)
           }
         }
         
@@ -61,7 +63,7 @@ class LoginViewController: UIViewController {
       switch loginResult {
       case .failed(let error):
         print(error)
-        showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while Signing In using Facebook. Please try again.", onOkPressed: nil)
+        showBasicAlert(onController: self, withTitle: "Sorry", message: "Facebook Authentication Failed. Please try again.", onOkPressed: nil)
       case .cancelled:
         print("Cancelled")
       case .success(let grantedPermissions, let declinedPermissions, let token):
@@ -80,9 +82,9 @@ class LoginViewController: UIViewController {
             
             DispatchQueue.main.async {
               if let error = error as? URLError, error.errorCode == NSURLErrorNotConnectedToInternet {
-                showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need Internet connection to Sign In. Please make sure you are connected to the Internet.", onOkPressed: nil)
+                showBasicAlert(onController: self, withTitle: "No Internet", message: "You'll need Internet connection to Log In. Please make sure you are connected to the Internet.", onOkPressed: nil)
               } else {
-                showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while Signing In using Facebook. Please try again.", onOkPressed: nil)
+                showBasicAlert(onController: self, withTitle: "Sorry", message: "Error while trying to Log In using Facebook. Please try again.", onOkPressed: nil)
               }
             }
             
