@@ -118,9 +118,11 @@ extension PinsOnTableViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.pins, for: indexPath)
     cell.textLabel?.text = studentLocations[indexPath.row].fullName
-    cell.detailTextLabel?.text = studentLocations[indexPath.row].mediaUrl
+    cell.detailTextLabel?.text = studentLocations[indexPath.row].mediaUrlString
+
     return cell
   }
 }
@@ -128,7 +130,7 @@ extension PinsOnTableViewController: UITableViewDataSource {
 extension PinsOnTableViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    if let url = URL(string: studentLocations[indexPath.row].mediaUrl) {
+    if let url = studentLocations[indexPath.row].mediaUrl {
       UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
   }

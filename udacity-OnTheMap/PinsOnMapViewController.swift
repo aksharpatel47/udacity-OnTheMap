@@ -12,7 +12,6 @@ import MapKit
 class PinsOnMapViewController: UIViewController {
   
   let appDelegate = UIApplication.shared.delegate as! AppDelegate
-  var studentLocationPins = [StudentLocationPin]()
   
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var reloadButton: UIBarButtonItem!
@@ -36,7 +35,7 @@ class PinsOnMapViewController: UIViewController {
         return
       }
       
-      self.pinOnMap(locations: studentLocations)
+      self.pinOnMap(studentLocations: studentLocations)
     })
   }
   
@@ -84,21 +83,21 @@ class PinsOnMapViewController: UIViewController {
         return
       }
       
-      self.pinOnMap(locations: studentLocations)
+      self.pinOnMap(studentLocations: studentLocations)
     })
   }
   
-  func pinOnMap(locations: [StudentLocation]) {
+  func pinOnMap(studentLocations: [StudentLocation]) {
     
-    self.studentLocationPins = []
+    var studentLocationPins = [StudentLocationPin]()
     
-    for location in locations {
-      self.studentLocationPins.append(StudentLocationPin(studentLocation: location))
+    for studentLocation in studentLocations {
+      studentLocationPins.append(StudentLocationPin(title: studentLocation.fullName, subtitle: studentLocation.mediaUrlString, coordinate: studentLocation.coordinate))
     }
     
     DispatchQueue.main.async {
       self.mapView.removeAnnotations(self.mapView.annotations)
-      self.mapView.addAnnotations(self.studentLocationPins)
+      self.mapView.addAnnotations(studentLocationPins)
     }
   }
   

@@ -16,11 +16,13 @@ class EnterLinkViewController: UIViewController {
   @IBOutlet weak var cancelButton: UIBarButtonItem!
   @IBOutlet weak var submitButton: UIButton!
   
-  /// (segue!)
-  var studentLocationPin: StudentLocationPin!
+  /// (segue!) Location String that was Geocoded
+  var mapString: String!
+  /// (segue!) Coordinate of the Location String got from Geocoding
+  var coordinate: CLLocationCoordinate2D!
   
   override func viewDidLoad() {
-    mapView.addAnnotation(studentLocationPin)
+    mapView.addAnnotation(StudentLocationPin(title: nil, subtitle: nil, coordinate: coordinate))
   }
   
   @IBAction func postNewPin(_ sender: UIButton) {
@@ -28,11 +30,9 @@ class EnterLinkViewController: UIViewController {
       return
     }
     
-    studentLocationPin.subtitle = mediaUrlString
-    
     prepareUiForNetWorkRequest()
     
-    UOTMClient.shared.postStudentLocation(studentLocationPin: studentLocationPin, completion: {
+    UOTMClient.shared.postStudentLocation(mapString: mapString, mediaUrlString: mediaUrlString, coordinate: coordinate, completion: {
       error in
       
       self.updateUiAfterNetworkRequest()

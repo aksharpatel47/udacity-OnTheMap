@@ -40,9 +40,7 @@ class EnterLocationViewController: UIViewController {
         return
       }
       
-      let studentLocationPin = StudentLocationPin(coordinate: placeMarkCoordinate)
-      studentLocationPin.mapString = locationText
-      self.performSegue(withIdentifier: Constants.Segues.goToEnterLink, sender: studentLocationPin)
+      self.performSegue(withIdentifier: Constants.Segues.goToEnterLink, sender: placeMarkCoordinate)
       self.updateUiAfterNetworkRequest()
     })
   }
@@ -54,11 +52,12 @@ class EnterLocationViewController: UIViewController {
     
     if identifier == Constants.Segues.goToEnterLink {
       guard let enterLinkController = segue.destination as? EnterLinkViewController,
-        let studentLocationPin = sender as? StudentLocationPin else {
+        let coordinate = sender as? CLLocationCoordinate2D else {
         return
       }
       
-      enterLinkController.studentLocationPin = studentLocationPin
+      enterLinkController.mapString = locationTextView.text
+      enterLinkController.coordinate = coordinate
     }
   }
   

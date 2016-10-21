@@ -19,8 +19,10 @@ struct StudentLocation {
   }
   var latitude: Double
   var longitude: Double
+  var coordinate: CLLocationCoordinate2D
   var mapString: String
-  var mediaUrl: String
+  var mediaUrlString: String
+  var mediaUrl: URL?
   var objectId: String
   var uniqueKey: String
   var updatedAt: String
@@ -32,15 +34,19 @@ struct StudentLocation {
     latitude = dictionary[UOTMClient.ResponseParameterKeys.latitude] as! Double
     longitude = dictionary[UOTMClient.ResponseParameterKeys.longitude] as! Double
     mapString = dictionary[UOTMClient.ResponseParameterKeys.mapString] as! String
-    mediaUrl = dictionary[UOTMClient.ResponseParameterKeys.mediaUrl] as! String
+    mediaUrlString = dictionary[UOTMClient.ResponseParameterKeys.mediaUrl] as! String
     objectId = dictionary[UOTMClient.ResponseParameterKeys.objectId] as! String
     uniqueKey = dictionary[UOTMClient.ResponseParameterKeys.uniqueKey] as! String
     updatedAt = dictionary[UOTMClient.ResponseParameterKeys.updatedAt] as! String
     createdAt = dictionary[UOTMClient.ResponseParameterKeys.createdAt] as! String
     
-    if !mediaUrl.hasPrefix("http://") && !mediaUrl.hasPrefix("https://") && !mediaUrl.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty {
-      mediaUrl = "http://" + mediaUrl
+    coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    
+    if !mediaUrlString.hasPrefix("http://") && !mediaUrlString.hasPrefix("https://") && !mediaUrlString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty {
+      mediaUrlString = "http://" + mediaUrlString
     }
+    
+    mediaUrl = URL(string: mediaUrlString)
   }
   
   static func parseStudentLocationsFromResults(result: [[String:Any]]) -> [StudentLocation] {

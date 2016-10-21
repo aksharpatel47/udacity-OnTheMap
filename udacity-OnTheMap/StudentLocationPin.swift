@@ -2,7 +2,7 @@
 //  StudentLocationPin.swift
 //  udacity-OnTheMap
 //
-//  Created by Techniexe on 20/10/16.
+//  Created by Techniexe on 21/10/16.
 //  Copyright © 2016 Ekantik Tech Studio. All rights reserved.
 //
 
@@ -13,19 +13,10 @@ class StudentLocationPin: NSObject, MKAnnotation {
   var title: String?
   var subtitle: String?
   var coordinate: CLLocationCoordinate2D
-  var mapString: String?
   
-  init(coordinate: CLLocationCoordinate2D) {
+  init(title: String?, subtitle: String?, coordinate: CLLocationCoordinate2D) {
+    self.title = title
+    self.subtitle = subtitle
     self.coordinate = coordinate
-    
-    super.init()
-  }
-  
-  init(studentLocation: StudentLocation) {
-    coordinate = CLLocationCoordinate2D(latitude: studentLocation.latitude, longitude: studentLocation.longitude)
-    title = studentLocation.fullName
-    subtitle = studentLocation.mediaUrl
-    
-    super.init()
   }
 }

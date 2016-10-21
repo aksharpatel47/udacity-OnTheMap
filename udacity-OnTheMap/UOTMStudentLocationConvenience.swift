@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 extension UOTMClient {
   
@@ -45,15 +46,15 @@ extension UOTMClient {
     //TODO: Implement get student location
   }
   
-  func postStudentLocation(studentLocationPin: StudentLocationPin, completion: @escaping (_ error: Error?) -> Void) {
+  func postStudentLocation(mapString: String, mediaUrlString: String, coordinate: CLLocationCoordinate2D, completion: @escaping (_ error: Error?) -> Void) {
     let body = [
       BodyKeys.uniqueKey: UserDefaults.standard.object(forKey: Constants.OfflineDataKeys.udacityAccountId)!,
       BodyKeys.firstName: "Akshar",
       BodyKeys.lastName: "Patel",
-      BodyKeys.mapString: studentLocationPin.mapString!,
-      BodyKeys.mediaUrl: studentLocationPin.subtitle!,
-      BodyKeys.latitude: studentLocationPin.coordinate.latitude,
-      BodyKeys.longitude: studentLocationPin.coordinate.longitude
+      BodyKeys.mapString: mapString,
+      BodyKeys.mediaUrl: mediaUrlString,
+      BodyKeys.latitude: coordinate.latitude,
+      BodyKeys.longitude: coordinate.longitude
     ]
     
     let _ = taskForPostMethod(method: Methods.studentLocation, queryParameters: nil, headers: studentLocationRequestHeaders, body: body, extractSubdata: false, completionForPost: {
