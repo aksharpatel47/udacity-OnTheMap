@@ -6,6 +6,7 @@
 You'll require the latest cocoapods installed. After installing cocoapods, run the following command on the Project:
 
 ```
+pod repo update
 pod install
 ```
 
