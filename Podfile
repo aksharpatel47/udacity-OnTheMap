@@ -6,7 +6,7 @@ target 'udacity-OnTheMap' do
   use_frameworks!
 
   # Pods for udacity-OnTheMap
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
-  pod 'FacebookShare'
+  pod 'FacebookCore', '0.2.0'
+  pod 'FacebookLogin', '0.2.0'
+  pod 'FacebookShare', '0.2.0'
 end
