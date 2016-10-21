@@ -20,8 +20,10 @@ class EnterLinkViewController: UIViewController {
   var mapString: String!
   /// (segue!) Coordinate of the Location String got from Geocoding
   var coordinate: CLLocationCoordinate2D!
+  let regionRadius = 10000.0
   
   override func viewDidLoad() {
+    centerMapOnLocation(coordinate: coordinate)
     mapView.addAnnotation(StudentLocationPin(title: nil, subtitle: nil, coordinate: coordinate))
   }
   
@@ -59,6 +61,12 @@ class EnterLinkViewController: UIViewController {
   
   @IBAction func cancelPostingNewPin(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
+  }
+  
+  func centerMapOnLocation(coordinate: CLLocationCoordinate2D) {
+    let coordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate,
+                                                              regionRadius * 2.0, regionRadius * 2.0)
+    mapView.setRegion(coordinateRegion, animated: true)
   }
   
   func prepareUiForNetWorkRequest() {
