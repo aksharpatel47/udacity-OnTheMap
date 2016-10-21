@@ -12,6 +12,7 @@ extension UOTMClient {
   struct Methods {
     static let studentLocation = "https://parse.udacity.com/parse/classes/StudentLocation"
     static let session = "https://www.udacity.com/api/session"
+    static let user = "https://www.udacity.com/api/users/{id}"
   }
   
   struct BodyKeys {
@@ -58,5 +59,10 @@ extension UOTMClient {
     static let updatedAt = "updatedAt"
     static let createdAt = "createdAt"
     static let results = "results"
+    
+    // User Info Keys
+    static let user = "user"
+    static let userFirstName = "first_name"
+    static let userLastName = "last_name"
   }
 }

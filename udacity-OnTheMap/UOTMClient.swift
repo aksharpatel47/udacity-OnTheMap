@@ -148,6 +148,14 @@ class UOTMClient {
     return url
   }
   
+  func prepareMethod(withName method: String, byReplacing placeholder: String, with data: String) -> String? {
+    guard let range = method.range(of: placeholder) else {
+      return nil
+    }
+    
+    return method.replacingCharacters(in: range, with: data)
+  }
+  
   func showSystemNetworkIndicator() {
     DispatchQueue.main.async {
       UIApplication.shared.isNetworkActivityIndicatorVisible = true

@@ -20,6 +20,8 @@ struct Constants {
     static let expiration = "sessionExpirationDate"
     static let udacityAccountId = "udacityAccountId"
     static let facebookToken = "facebookToken"
+    static let firstName = "firstName"
+    static let lastName = "lastName"
   }
   
   struct CellIdentifiers {

@@ -49,8 +49,8 @@ extension UOTMClient {
   func postStudentLocation(mapString: String, mediaUrlString: String, coordinate: CLLocationCoordinate2D, completion: @escaping (_ error: Error?) -> Void) {
     let body = [
       BodyKeys.uniqueKey: UserDefaults.standard.object(forKey: Constants.OfflineDataKeys.udacityAccountId)!,
-      BodyKeys.firstName: "Akshar",
-      BodyKeys.lastName: "Patel",
+      BodyKeys.firstName: UserDefaults.standard.object(forKey: Constants.OfflineDataKeys.firstName)!,
+      BodyKeys.lastName: UserDefaults.standard.object(forKey: Constants.OfflineDataKeys.lastName)!,
       BodyKeys.mapString: mapString,
       BodyKeys.mediaUrl: mediaUrlString,
       BodyKeys.latitude: coordinate.latitude,

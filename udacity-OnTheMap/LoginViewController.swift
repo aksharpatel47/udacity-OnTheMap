@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     prepareUiForNetworkRequest()
     
     UOTMClient.shared.loginUsingEmail(username: username, password: password, completion: {
-      response, error in
+      error in
       
       self.updateUiAfterNetworkRequest()
       
@@ -82,7 +82,7 @@ class LoginViewController: UIViewController {
         self.prepareUiForNetworkRequest()
         
         UOTMClient.shared.loginUsingFacebook(token: token.authenticationToken, completion: {
-          response, error in
+          error in
           
           self.updateUiAfterNetworkRequest()
           
