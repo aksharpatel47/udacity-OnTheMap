@@ -56,6 +56,14 @@ class LoginViewController: UIViewController {
     })
   }
   
+  @IBAction func signupUser(_ sender: UIButton) {
+    guard let url = URL(string: "https://www.udacity.com/account/auth#!/signup") else {
+      return
+    }
+    
+    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+  }
+  
   @IBAction func loginViaFacebook(_ sender: UIButton) {
     let loginManager = LoginManager()
     loginManager.logIn([.publicProfile, .email], viewController: self, completion: {
