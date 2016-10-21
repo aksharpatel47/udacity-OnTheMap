@@ -23,8 +23,8 @@ extension UOTMClient {
       }
       
       guard let results = response[ResponseParameterKeys.results] as? [[String:Any]] else {
-        //FIXME: Create error for not finding results key
-        completion(nil)
+        let userInfo = [NSLocalizedDescriptionKey: "Invalid Data received from while getting student locations from server."]
+        completion(NSError(domain: NSURLErrorDomain, code: NSURLErrorBadServerResponse, userInfo: userInfo))
         return
       }
       
