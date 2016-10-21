@@ -12,6 +12,7 @@ import CoreLocation
 
 class EnterLocationViewController: UIViewController {
   
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var locationTextView: UITextView!
   @IBOutlet weak var findOnMapButton: UIButton!
   @IBOutlet weak var cancelButton: UIBarButtonItem!
@@ -64,6 +65,7 @@ class EnterLocationViewController: UIViewController {
   func prepareUiForNetworkRequest() {
     DispatchQueue.main.async {
       UIApplication.shared.isNetworkActivityIndicatorVisible = true
+      self.activityIndicator.startAnimating()
       self.locationTextView.isEditable = false
       self.findOnMapButton.isEnabled = false
       self.findOnMapButton.backgroundColor = UIColor.darkGray
@@ -75,6 +77,7 @@ class EnterLocationViewController: UIViewController {
   func updateUiAfterNetworkRequest() {
     DispatchQueue.main.async {
       UIApplication.shared.isNetworkActivityIndicatorVisible = false
+      self.activityIndicator.stopAnimating()
       self.locationTextView.isEditable = true
       self.findOnMapButton.isEnabled = true
       self.findOnMapButton.backgroundColor = UIColor.white

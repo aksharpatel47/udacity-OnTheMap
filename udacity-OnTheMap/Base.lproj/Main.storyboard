@@ -245,6 +245,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sr8-td-bbd">
                                 <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zIs-rR-Wrw"/>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JL7-aQ-Kol">
                                         <attributedString key="attributedText">
                                             <fragment>
@@ -278,7 +279,9 @@ today?</string>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="zIs-rR-Wrw" firstAttribute="top" secondItem="sr8-td-bbd" secondAttribute="top" constant="40" id="4Rc-yE-xye"/>
                                     <constraint firstAttribute="bottom" secondItem="JL7-aQ-Kol" secondAttribute="bottom" constant="16" id="R3B-HW-hrH"/>
+                                    <constraint firstItem="zIs-rR-Wrw" firstAttribute="centerX" secondItem="sr8-td-bbd" secondAttribute="centerX" id="Xp1-g7-ekC"/>
                                     <constraint firstItem="JL7-aQ-Kol" firstAttribute="centerX" secondItem="sr8-td-bbd" secondAttribute="centerX" id="u8P-mN-1LD"/>
                                     <constraint firstAttribute="height" constant="200" id="xFO-Qf-3j0"/>
                                 </constraints>
@@ -336,6 +339,7 @@ today?</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="zIs-rR-Wrw" id="N7q-hL-de9"/>
                         <outlet property="cancelButton" destination="QrE-54-ebN" id="m9J-h6-ixq"/>
                         <outlet property="findOnMapButton" destination="NcT-IE-rlY" id="qvV-OP-she"/>
                         <outlet property="locationTextView" destination="adX-ba-t3P" id="hiZ-Ro-pdX"/>
