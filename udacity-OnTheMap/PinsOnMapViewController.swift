@@ -24,18 +24,18 @@ class PinsOnMapViewController: UIViewController {
     prepareUiForNetworkRequest()
     
     UOTMClient.shared.getStudentLocations(completion: {
-      studentLocations, error in
+      error in
       
       self.updateUiAfterNetworkRequest()
       
-      guard let studentLocations = studentLocations, error == nil else {
+      guard error == nil else {
         
         handleStudentLocationsRequestError(onViewController: self, error: error!)
         
         return
       }
       
-      self.pinOnMap(studentLocations: studentLocations)
+      self.pinOnMap(studentLocations: StudentLocation.locations)
     })
   }
   
@@ -72,18 +72,18 @@ class PinsOnMapViewController: UIViewController {
     prepareUiForNetworkRequest()
     
     UOTMClient.shared.getStudentLocationsFromServer(completion: {
-      studentLocations, error in
+      error in
       
       self.updateUiAfterNetworkRequest()
       
-      guard let studentLocations = studentLocations, error == nil else {
+      guard error == nil else {
         
         handleStudentLocationsRequestError(onViewController: self, error: error!)
         
         return
       }
       
-      self.pinOnMap(studentLocations: studentLocations)
+      self.pinOnMap(studentLocations: StudentLocation.locations)
     })
   }
   

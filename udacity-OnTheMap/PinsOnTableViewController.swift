@@ -11,7 +11,6 @@ import UIKit
 class PinsOnTableViewController: UIViewController {
   
   let appDelegate = UIApplication.shared.delegate as! AppDelegate
-  var studentLocations = [StudentLocation]()
   
   @IBOutlet weak var studentLocationsTableView: UITableView!
   @IBOutlet weak var reloadButton: UIBarButtonItem!
@@ -24,18 +23,16 @@ class PinsOnTableViewController: UIViewController {
     prepareUiForNetworkRequest()
     
     UOTMClient.shared.getStudentLocations(completion: {
-      result, error in
+      error in
       
       self.updateUiAfterNetworkRequest()
       
-      guard let result = result, error == nil else {
+      guard error == nil else {
         
         handleStudentLocationsRequestError(onViewController: self, error: error!)
         
         return
       }
-      
-      self.studentLocations = result
       
       DispatchQueue.main.async {
         self.studentLocationsTableView.reloadData()
@@ -76,18 +73,16 @@ class PinsOnTableViewController: UIViewController {
     prepareUiForNetworkRequest()
     
     UOTMClient.shared.getStudentLocationsFromServer(completion: {
-      result, error in
+      error in
       
       self.updateUiAfterNetworkRequest()
       
-      guard let result = result, error == nil else {
+      guard error == nil else {
         
         handleStudentLocationsRequestError(onViewController: self, error: error!)
         
         return
       }
-      
-      self.studentLocations = result
       
       DispatchQueue.main.async {
         self.studentLocationsTableView.reloadData()
@@ -114,14 +109,14 @@ class PinsOnTableViewController: UIViewController {
 
 extension PinsOnTableViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return studentLocations.count
+    return StudentLocation.locations.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifiers.pins, for: indexPath)
-    cell.textLabel?.text = studentLocations[indexPath.row].fullName
-    cell.detailTextLabel?.text = studentLocations[indexPath.row].mediaUrlString
+    cell.textLabel?.text = StudentLocation.locations[indexPath.row].fullName
+    cell.detailTextLabel?.text = StudentLocation.locations[indexPath.row].mediaUrlString
 
     return cell
   }
@@ -130,7 +125,7 @@ extension PinsOnTableViewController: UITableViewDataSource {
 extension PinsOnTableViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    if let url = studentLocations[indexPath.row].mediaUrl {
+    if let url = StudentLocation.locations[indexPath.row].mediaUrl {
       UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
   }

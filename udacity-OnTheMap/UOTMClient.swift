@@ -12,8 +12,6 @@ import UIKit
 class UOTMClient {
   
   var shared = URLSession.shared
-
-  var studentLocations = [StudentLocation]()
   
   var studentLocationRequestHeaders = [
     "X-Parse-Application-Id": "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr",

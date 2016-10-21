@@ -28,6 +28,8 @@ struct StudentLocation {
   var updatedAt: String
   var createdAt: String
   
+  static var locations = [StudentLocation]()
+  
   init(dictionary: [String:Any]) {
     firstName = dictionary[UOTMClient.ResponseParameterKeys.firstName] as! String
     lastName = dictionary[UOTMClient.ResponseParameterKeys.lastName] as! String

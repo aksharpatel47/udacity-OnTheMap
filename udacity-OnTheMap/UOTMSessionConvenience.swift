@@ -89,7 +89,7 @@ extension UOTMClient {
         return
       }
       
-      self.studentLocations = []
+      StudentLocation.locations = []
       UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.sessionId)
       UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.expiration)
       UserDefaults.standard.removeObject(forKey: Constants.OfflineDataKeys.udacityAccountId)
