@@ -33,15 +33,6 @@ extension UOTMClient {
     })
   }
   
-  func getStudentLocations(completion: @escaping (_ error: Error?) -> Void) {
-    if StudentLocation.locations.count > 0 {
-      completion(nil)
-      return
-    }
-    
-    getStudentLocationsFromServer(completion: completion)
-  }
-  
   func postStudentLocation(mapString: String, mediaUrlString: String, coordinate: CLLocationCoordinate2D, completion: @escaping (_ error: Error?) -> Void) {
     let body = [
       BodyKeys.uniqueKey: UserDefaults.standard.object(forKey: Constants.OfflineDataKeys.udacityAccountId)!,
