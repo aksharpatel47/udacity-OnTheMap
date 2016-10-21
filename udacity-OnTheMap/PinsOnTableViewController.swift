@@ -61,7 +61,7 @@ class PinsOnTableViewController: UIViewController {
             showBasicAlert(onController: self, withTitle: Constants.ErrorMessages.sorryTitle, message: Constants.ErrorMessages.logOutMessage, onOkPressed: nil)
           }
         }
-        
+
         return
       }
       
