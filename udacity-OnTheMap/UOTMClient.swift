@@ -168,9 +168,5 @@ class UOTMClient {
     }
   }
   
-//  func taskForPutMethod() -> URLSessionTask {
-//    
-//  }
-  
   static let shared = UOTMClient()
 }

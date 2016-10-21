@@ -42,10 +42,6 @@ extension UOTMClient {
     getStudentLocationsFromServer(completion: completion)
   }
   
-  func getStudentLocation(uniqueKey: String) {
-    //TODO: Implement get student location
-  }
-  
   func postStudentLocation(mapString: String, mediaUrlString: String, coordinate: CLLocationCoordinate2D, completion: @escaping (_ error: Error?) -> Void) {
     let body = [
       BodyKeys.uniqueKey: UserDefaults.standard.object(forKey: Constants.OfflineDataKeys.udacityAccountId)!,
@@ -67,9 +63,5 @@ extension UOTMClient {
       
       completion(nil)
     })
-  }
-  
-  func updateStudentLocation() {
-    //TODO: update student location
   }
 }
