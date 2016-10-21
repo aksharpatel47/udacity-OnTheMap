@@ -21,7 +21,7 @@ extension UOTMClient {
     let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, headers: nil, body: body, extractSubdata: true, completionForPost: {
       response, error in
       
-      self.saveSessionToken(from: response)
+      self.saveSessionInfo(from: response)
       completion(response, error)
     })
   }
@@ -36,7 +36,7 @@ extension UOTMClient {
     let _ = taskForPostMethod(method: Methods.session, queryParameters: nil, headers: nil, body: body, extractSubdata: true, completionForPost: {
       response, error in
       
-      self.saveSessionToken(from: response)
+      self.saveSessionInfo(from: response)
       completion(response, error)
     })
   }
@@ -106,7 +106,7 @@ extension UOTMClient {
     task.resume()
   }
   
-  func saveSessionToken(from response: Any?) {
+  func saveSessionInfo(from response: Any?) {
     guard let response = response as? [String:Any],
       let account = response[ResponseParameterKeys.account] as? [String:Any],
       let key = account[ResponseParameterKeys.accountKey] as? String,
