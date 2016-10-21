@@ -20,24 +20,11 @@ class PinsOnTableViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    prepareUiForNetworkRequest()
-    
-    UOTMClient.shared.getStudentLocations(completion: {
-      error in
-      
-      self.updateUiAfterNetworkRequest()
-      
-      guard error == nil else {
-        
-        handleStudentLocationsRequestError(onViewController: self, error: error!)
-        
-        return
-      }
-      
-      DispatchQueue.main.async {
-        self.studentLocationsTableView.reloadData()
-      }
-    })
+    if StudentLocation.locations.count == 0 {
+      reloadStudentLocations(reloadButton)
+    } else {
+      studentLocationsTableView.reloadData()
+    }
   }
   
   @IBAction func logOutOfSession(_ sender: UIBarButtonItem) {

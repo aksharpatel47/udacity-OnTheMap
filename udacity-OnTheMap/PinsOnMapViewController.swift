@@ -21,22 +21,11 @@ class PinsOnMapViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    prepareUiForNetworkRequest()
-    
-    UOTMClient.shared.getStudentLocations(completion: {
-      error in
-      
-      self.updateUiAfterNetworkRequest()
-      
-      guard error == nil else {
-        
-        handleStudentLocationsRequestError(onViewController: self, error: error!)
-        
-        return
-      }
-      
-      self.pinOnMap(studentLocations: StudentLocation.locations)
-    })
+    if StudentLocation.locations.count == 0 {
+      reloadStudentLocations(reloadButton)
+    } else {
+      pinOnMap(studentLocations: StudentLocation.locations)
+    }
   }
   
   @IBAction func logOutOfSession(_ sender: UIBarButtonItem) {
