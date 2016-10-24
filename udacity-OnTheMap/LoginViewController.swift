@@ -112,18 +112,18 @@ class LoginViewController: UIViewController {
   }
   
   func prepareUiForNetworkRequest() {
-    DispatchQueue.main.async {
-      self.loginButton.isEnabled = false
-      self.signupButton.isEnabled = false
-      self.facebookButton.isEnabled = false
-    }
+    setUI(enabled: false)
   }
   
   func updateUiAfterNetworkRequest() {
+    setUI(enabled: true)
+  }
+  
+  func setUI(enabled: Bool) {
     DispatchQueue.main.async {
-      self.loginButton.isEnabled = true
-      self.signupButton.isEnabled = true
-      self.facebookButton.isEnabled = true
+      self.loginButton.isEnabled = enabled
+      self.signupButton.isEnabled = enabled
+      self.facebookButton.isEnabled = enabled
     }
   }
 }
